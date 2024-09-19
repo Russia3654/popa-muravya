@@ -21,21 +21,26 @@ class MyHeader extends HTMLElement {
           <li>
             <a href="/popa-muravya/index.html">Home</a>
           </li>
+
           <li>
-            <a href="/popa-muravya/public/about.html">About</a>
+            <a href="/popa-muravya/public/about.html" id="about-link">About</a>
+            <nav class="dropdown-about">
+              <li>
+                <a href="/popa-muravya/public/schedule.html">Schedule</a>
+              </li>
+              <li>
+                <a href="/popa-muravya/public/portfolio.html">Portfolio</a>
+              </li>
+              <li>
+                <a href="/popa-muravya/public/contact.html">Contacts</a>
+              </li>
+            </nav>
           </li>
-          <li>
-            <a href="/popa-muravya/public/schedule.html">Schedule</a>
-          </li>
-          <li>
-            <a href="/popa-muravya/public/portfolio.html">Portfolio</a>
-          </li>
+
           <li>
             <a href="/popa-muravya/public/quiz.html">Quiz</a>
           </li>
-          <li>
-            <a href="/popa-muravya/public/contact.html">Contacts</a>
-          </li>
+          
         </nav>
       </div>
     </header>
