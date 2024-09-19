@@ -5,7 +5,7 @@ class MyHeader extends HTMLElement {
     <header class="cust-head">
       <div class="left-head">
         <div class="logo">
-          <img src="../assets/image/rusteck_logo.png" alt="RusTeck logo" class="logo-image">
+          <img src="../assets/image/rusteck-logo.png" alt="RusTeck logo" class="logo-image">
         </div>
       </div>
       <div class="right-head">
