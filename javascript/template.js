@@ -5,7 +5,7 @@ class MyHeader extends HTMLElement {
     <header class="cust-head">
       <div class="left-head">
         <div class="logo">
-          <img src="../assets/image/rusteck-logo.png" alt="RusTeck logo" class="logo-image">
+          <img src="./assets/image/rusteck-logo.png" alt="RusTeck logo" class="logo-image">
         </div>
       </div>
       <div class="right-head">
@@ -19,22 +19,22 @@ class MyHeader extends HTMLElement {
 
         <nav class="navbar">
           <li>
-            <a href="../index.html">Home</a>
+            <a href="./index.html">Home</a>
           </li>
           <li>
-            <a href="/public/about.html">About</a>
+            <a href="./public/about.html">About</a>
           </li>
           <li>
-            <a href="/public/schedule.html">Schedule</a>
+            <a href="./public/schedule.html">Schedule</a>
           </li>
           <li>
-            <a href="/public/portfolio.html">Portfolio</a>
+            <a href="./public/portfolio.html">Portfolio</a>
           </li>
           <li>
-            <a href="/public/quiz.html">Quiz</a>
+            <a href="./public/quiz.html">Quiz</a>
           </li>
           <li>
-            <a href="/public/contact.html">Contacts</a>
+            <a href="./public/contact.html">Contacts</a>
           </li>
         </nav>
       </div>
