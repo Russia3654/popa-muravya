@@ -1,0 +1,114 @@
+.cust-head {
+  display: flex;
+  height: 75px;
+  background-color: rgb(255, 94, 0);
+  justify-content: space-between;
+}
+.right-head {
+  padding-top: 23px;
+}
+.logo-image{
+  object-fit: cover;
+  width: 200px;
+  height: 70px;
+  padding-top: 2.5px;
+}
+
+.navbar{
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar li{
+  list-style-type: none;
+}
+
+.navbar li a{
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 99px;
+  transition: 150ms;
+}
+
+.navbar li a:hover{
+  background-color: #B2FFFF;
+  color: rgb(3, 0, 76);
+}
+input #checkbox{
+  display: none;
+}
+
+#checkbox{
+  display: none;
+}
+
+
+@media screen and (max-width: 1200px){
+  .navbar{
+      position: absolute;
+      top: 75px;
+      flex-direction: column;
+      align-items: center;
+      gap: 50px;
+      background: rgba(0, 0, 0, 0.65);
+      width: 100%;
+      right: 0;
+      padding: 0px 0;
+      height: 0;
+      overflow: hidden;
+      transition: 500ms;
+  }
+  input:checked ~ .navbar{
+      height: 100vh;
+      padding: 50px 0;
+  }
+  .toggle {
+      position: relative;
+      top:-5px;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition-duration: .5s;
+  }
+  .bars {
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, rgba(3,0,57,1) 0%, rgba(8,43,143,1) 35%, rgba(8,37,139,1) 67%, rgba(94,228,255,1) 100%);
+      border-radius: 4px;
+  }
+  #bar2 {
+      transition-duration: .8s;
+  }
+  #bar1,#bar3 {
+      width: 70%;
+  }
+  #checkbox:checked + .toggle .bars {
+      position: absolute;
+      transition-duration: .5s;
+  }
+  #checkbox:checked + .toggle #bar2 {
+      transform: scaleX(0);
+      transition-duration: .5s;
+  }
+  #checkbox:checked + .toggle #bar1 {
+      width: 100%;
+      transform: rotate(45deg);
+      transition-duration: .5s;
+  }
+  #checkbox:checked + .toggle #bar3 {
+      width: 100%;
+      transform: rotate(-45deg);
+      transition-duration: .5s;
+  }
+  #checkbox:checked + .toggle {
+      transition-duration: .5s;
+      transform: rotate(180deg);
+  }
+}
