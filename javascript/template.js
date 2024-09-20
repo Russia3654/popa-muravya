@@ -29,7 +29,7 @@ class MyHeader extends HTMLElement {
                 <a href="/popa-muravya/public/schedule.html">Schedule</a>
               </li>
               <li>
-                <a href="/popa-muravya/public/portfolio.html">Portfolio</a>
+                <a href="/popa-muravya/public/projects.html">Projects</a>
               </li>
               <li>
                 <a href="/popa-muravya/public/contact.html">Contacts</a>
