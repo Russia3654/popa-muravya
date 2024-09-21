@@ -4,11 +4,6 @@ class MyHeader extends HTMLElement {
     this.innerHTML = `
     <header class="cust-head">
       <div class="left-head">
-        <div class="logo">
-          <img src="/popa-muravya/assets/image/rusteck-logo.png" alt="RusTeck logo" class="logo-image">
-        </div>
-      </div>
-      <div class="right-head">
         <input type="checkbox" id="checkbox">
 
         <label for="checkbox" class="toggle">
@@ -21,7 +16,7 @@ class MyHeader extends HTMLElement {
           <li>
             <section>
               <div class="button v18">
-                <a href="/popa-muravya/index.html" class="label">Home</a>
+                <a href="/popa-muravya/index.html" class="label b-button">Home</a>
                 <span class="icon">
                     <span></span>
                 </span>
@@ -34,7 +29,7 @@ class MyHeader extends HTMLElement {
           <li>
             <section>
               <div class="button v18 about-link">
-                <a href="/popa-muravya/public/about.html" class="label" >about</a>
+                <a href="/popa-muravya/public/about.html" class="label b-button" >about</a>
                 <span class="icon">
                     <span></span>
                 </span>
@@ -44,13 +39,13 @@ class MyHeader extends HTMLElement {
             
             <nav class="dropdown-about">
               <li>
-                <a href="/popa-muravya/public/schedule.html">Schedule</a>
+                <a href="/popa-muravya/public/schedule.html" class="b-button">Schedule</a>
               </li>
               <li>
-                <a href="/popa-muravya/public/projects.html">Projects</a>
+                <a href="/popa-muravya/public/projects.html" class="b-button">Projects</a>
               </li>
               <li>
-                <a href="/popa-muravya/public/contact.html">Contacts</a>
+                <a href="/popa-muravya/public/contact.html" class="b-button">Contacts</a>
               </li>
             </nav>
             </section>
@@ -59,7 +54,7 @@ class MyHeader extends HTMLElement {
           <li>
             <section>
               <div class="button v18">
-                <a href="/popa-muravya/public/quiz.html" class="label">Quiz</a>
+                <a href="/popa-muravya/public/quiz.html" class="label b-button">Quiz</a>
                 <span class="icon">
                     <span></span>
                 </span>
@@ -68,8 +63,30 @@ class MyHeader extends HTMLElement {
               </div>
             </section>
           </li>
-          
         </nav>
+      </div>
+      
+      <div class="right-head">
+          <section>
+              <div class="button v18">
+                <a href="/popa-muravya/public/quiz.html" class="label m-button">Rus</a>
+                <span class="icon">
+                    <span></span>
+                </span>
+                <span class="icon2">
+                </span>
+              </div>
+            </section>
+            <section>
+              <div class="button v18">
+                <a href="/popa-muravya/public/quiz.html" class="label m-button">Eng</a>
+                <span class="icon">
+                    <span></span>
+                </span>
+                <span class="icon2">
+                </span>
+              </div>
+            </section>
       </div>
     </header>
     `
