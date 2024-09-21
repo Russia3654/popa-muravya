@@ -19,11 +19,29 @@ class MyHeader extends HTMLElement {
 
         <nav class="navbar">
           <li>
-            <a href="/popa-muravya/index.html">Home</a>
+            <section>
+              <div class="button v18">
+                <a href="/popa-muravya/index.html" class="label">Home</a>
+                <span class="icon">
+                    <span></span>
+                </span>
+                <span class="icon2">
+                </span>
+              </div>
+            </section>
           </li>
 
           <li>
-            <a href="/popa-muravya/public/about.html" id="about-link">About</a>
+            <section>
+              <div class="button v18 about-link">
+                <a href="/popa-muravya/public/about.html" class="label" >about</a>
+                <span class="icon">
+                    <span></span>
+                </span>
+                <span class="icon2">
+                </span>
+              </div>
+            
             <nav class="dropdown-about">
               <li>
                 <a href="/popa-muravya/public/schedule.html">Schedule</a>
@@ -35,10 +53,20 @@ class MyHeader extends HTMLElement {
                 <a href="/popa-muravya/public/contact.html">Contacts</a>
               </li>
             </nav>
+            </section>
           </li>
 
           <li>
-            <a href="/popa-muravya/public/quiz.html">Quiz</a>
+            <section>
+              <div class="button v18">
+                <a href="/popa-muravya/public/quiz.html" class="label">Quiz</a>
+                <span class="icon">
+                    <span></span>
+                </span>
+                <span class="icon2">
+                </span>
+              </div>
+            </section>
           </li>
           
         </nav>
