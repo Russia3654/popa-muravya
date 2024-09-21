@@ -7,7 +7,7 @@ main {
   justify-content: space-between;
 }
 
-.button {
+/* .button {
   margin: 0px 10px;
   float: left;
   position: relative;
@@ -106,4 +106,4 @@ main {
 .button.v18 .icon span:after {
   right: 0;
   bottom: 0;
-}
+} */

@@ -1,3 +1,4 @@
+/* div style */
 .cust-head {
   display: flex;
   width: 100%;
@@ -16,7 +17,7 @@
   height: 70px;
   padding-top: 2.5px;
 }
-
+/*  */
 .navbar{
   display: flex;
   gap: 1rem;
@@ -38,6 +39,110 @@
 .navbar li a:hover{
   color: #000000;
 }
+
+/* button style */
+.button {
+  margin: 0px 10px;
+  float: left;
+  position: relative;
+  font-family: arial;
+  text-transform: uppercase;
+  color: black;
+  cursor: pointer;
+}
+.button .label {
+  padding: 10px;
+  display: inline-block;
+}
+.button.v18:hover .icon {
+  transform: scale(0.9) skew(0deg, 0deg);
+}
+.button.v18:hover .icon:before,
+.button.v18:hover .icon:after {
+  width: 60px;
+  transition-delay: 0.4s;
+}
+.button.v18:hover .icon:before {
+  left: calc(50% - 30px);
+}
+.button.v18:hover .icon:after {
+  right: calc(50% - 30px);
+}
+.button.v18:hover .icon span:before,
+.button.v18:hover .icon span:after {
+  height: 0;
+  transition-delay: 0s;
+}
+.button.v18:hover .icon2 {
+  transform: skew(-40deg, 0deg) scaleX(1);
+  background: #f0202f;
+  z-index: -1;
+  transition-delay: 0.5s;
+}
+.button.v18 .label {
+  padding: 10px 22px;
+}
+.button.v18 .icon2 {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: skew(-40deg, 0deg) scaleX(0.2);
+  transition: all 0.2s;
+}
+.button.v18 .icon {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: skew(-40deg, 0deg);
+  transition: all 0.2s;
+  pointer-events: none;
+}
+.button.v18 .icon:before,
+.button.v18 .icon:after {
+  content: "";
+  height: 1px;
+  width: 30px;
+  position: absolute;
+  display: block;
+  background: #f0202f;
+  transition: all 0.2s;
+  transition-delay: 0s;
+}
+.button.v18 .icon:before {
+  left: 0;
+  top: 0;
+}
+.button.v18 .icon:after {
+  right: 0;
+  bottom: 0;
+}
+.button.v18 .icon span:before,
+.button.v18 .icon span:after {
+  content: "";
+  background: #f0202f;
+  position: absolute;
+  display: block;
+  width: 2px;
+  height: 30px;
+  transition: all 0.2s;
+  transition-delay: 0.4s;
+}
+.button.v18 .icon span:before {
+  left: 0;
+  top: 0;
+}
+.button.v18 .icon span:after {
+  right: 0;
+  bottom: 0;
+}
+
+/* for humbergers dropdonw  */
 input #checkbox{
   display: none;
 }
@@ -46,25 +151,35 @@ input #checkbox{
   display: none;
 }
 
-/*
-  dropdown `about` button
-*/
+/* dropdown `about` button */
 .dropdown-about{
   background-color: #f0202f;
   padding: 10px 0px;
-  display: none;
+  display: flex;
   position: absolute;
-  top: 64px;
+  top: 63px;
   flex-direction: column;
   gap: 1rem;
   list-style: none;
   right: 180px;
-  
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.5s;
 }
 .about-link:hover + .dropdown-about,
 .dropdown-about:hover
 {
-  display: flex;
+  animation: dropdown-animation 5s forwards;
+  animation-delay: 0.7s;
+}
+
+@keyframes dropdown-animation{
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
 }
 
 
