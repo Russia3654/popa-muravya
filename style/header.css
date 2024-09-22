@@ -19,14 +19,7 @@
   display: flex;
 }
 
-.logo-image {
-  object-fit: cover;
-  width: 200px;
-  height: 70px;
-  padding-top: 2.5px;
-}
-
-/*  */
+/* navigation bar */
 .navbar {
   display: flex;
   gap: 1rem;
@@ -36,7 +29,8 @@
   list-style-type: none;
 }
 
-.navbar li a:hover {
+.navbar li a:hover,
+.body-button {
   color: #322e2d;
 }
 
