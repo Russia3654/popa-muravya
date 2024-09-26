@@ -1,0 +1,76 @@
+.schedule-table{
+  display: grid;
+  grid-template-columns: repeat(6, 100px);
+  grid-template-rows: repeat(8, 50px);
+}
+.schedule-table:hover{
+  z-index: 2;
+}
+.subject-container{
+  display: flex;
+}
+.monday{
+  grid-column: 2;
+}
+.eight-time{
+  grid-row: 2;
+}
+.time{
+  grid-column: 1;
+}
+/* computer network */
+.subject-container.cn-1{
+  grid-row: 2;
+  grid-column: 2;
+}
+.subject-container.cn-2{
+  grid-row: 2;
+  grid-column: 6;
+}
+/* chemistry */
+.subject-container.ch-1{
+  position: relative;
+  grid-row: 6;
+  grid-column: 2;
+  top: 50%;
+}
+.subject-container.ch-2{
+  position: relative;
+  grid-row: 6;
+  grid-column: 6;
+  top: 50%;
+}
+/* discreet method */
+.subject-container.ds-1{
+  grid-row: 5;
+  grid-column: 3;
+}
+.subject-container.ds-2{
+  grid-row: 5;
+  grid-column: 5;
+}
+/* it */
+.subject-container.it-1{
+  position: relative;
+  grid-row: 3;
+  grid-column: 3;
+  top: 50%;
+}
+.subject-container.it-2{
+  position: relative;
+  grid-row: 3;
+  grid-column: 5;
+  top: 50%;
+}
+/*  */
+.subject{
+  width: 100%;
+  height: 125%;
+}
+.cn:hover,
+.ch:hover,
+.it:hover,
+.ds:hover{
+  background-color: #ff5700;
+  color: #322e2d;
+}
