@@ -4,21 +4,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
+  <title>Projects</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="../style/header.css">
-  <link rel="stylesheet" href="./style/animation.css">
+  <link rel="stylesheet" href="../style/animation.css">
+  <link rel="stylesheet" href="../style/project.css">
 </head>
 
 <body id="project" data-barba="wrapper">
   <custom-header></custom-header>
   <div class="loader"></div>
-  <main data-barba="container"></main>
+  <main data-barba="container">
+    <div class="banner">
+      <div class="slider" style="--quantity: 6">
+        <div class="item" style="--position: 1">
+          <img src="/popa-muravya/assets/image/tindog-porject.png" alt="TinDog" class="project-image">
+          <div class="text">
+            <h2>TinDog</h2>
+          </div>
+        </div>
+        <div class="item" style="--position: 2">
+          <img src="/popa-muravya/assets/image/coming-soon.png" alt="Coming soon" class="project-image">
+          <div class="text">
+            <h2>Coming Soon</h2>
+          </div>
+        </div>
+        <div class="item" style="--position: 3">
+          <img src="/popa-muravya/assets/image/tower-defense-welcome.jpg" alt="Tower Defense" class="project-image">
+          <div class="text">
+            <h2>Tower Defense</h2>
+          </div>
+        </div>
+        <div class="item" style="--position: 4">
+          <img src="/popa-muravya/assets/image/old-portfolio.jpg" alt=" Old Portfolio" class="project-image">
+          <div class="text">
+            <h2>Old Portfolio</h2>
+          </div>
+        </div>
+        <div class="item" style="--position: 5">
+          <a href="">
+            <div class="img-container">
+              <img src="/popa-muravya/assets/image/ai.jpg" alt="Virtual Assistant" class="under-construction-project">
+              <img src="/popa-muravya/assets/image/under-construction.png" alt="under construction" class="under-construction">
+            </div>
+          </a>
+          <div class="text">
+            <h2>Virtual Assistant</h2>
+          </div>
+        </div>
+        <div class="item" style="--position: 6">
+          <a href="">
+            <div class="img-container">
+              <img src="/popa-muravya/assets/image/rusteck-landing-page.png" alt="RusTeck" class="under-construction-project">
+              <img src="/popa-muravya/assets/image/under-construction.png" alt="under construction" class="under-construction">
+            </div>
+          </a>
+          <div class="text">
+            <h2>RusTeck</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 
 
   <script src="https://unpkg.com/@barba/core"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
-  <script src="./javascript/script.js" defer></script>
+  <script src="../javascript/script.js" defer></script>
+  <script src="../javascript/porject-animation.js" defer></script>
   <script type="module" src="../javascript/template.js"></script>
 </body>
 
