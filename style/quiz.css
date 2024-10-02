@@ -1,0 +1,16 @@
+main{
+  justify-content: center;
+}
+
+.quiz-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+.quiz-container .quiz-item img{
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
