@@ -135,15 +135,19 @@ barba.init({
   cacheEnabled: false,
   transitions: [{
     async leave() {
-      await loaderIn();
-    },
-    enter() {
-      loaderAway();
-    }
-  }],
-  hooks: {
-    after() {
-      console.log('After hook called');
+        console.log('Leave transition started');
+        await loaderIn();
+        console.log('Leave transition finished');
+      },
+      enter() {
+        console.log('Enter transition started');
+        loaderAway();
+        console.log('Enter transition finished');
+      }
+    }],
+    hooks: {
+      after() {
+        console.log('After hook called');
 
       // Get the current page from the URL
       const currentPage = window.location.pathname.split('/').pop();
