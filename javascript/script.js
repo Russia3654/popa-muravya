@@ -63,19 +63,95 @@ barba.hooks.enter(() => {
 
 });
 
-barba.init({
-    cacheEnabled: false,
-    transitions: [{
-      beforeLeave() {
-        loaderIn();
-      },
-      after() {
-        setTimeout(() => {
-          window.location.reload(true); // perform a hard reload
-        }, 800); // wait for 800ms to ensure the animation is complete
-      }
-    }]
+function updateHeadSection(currentPage) {
+  const head = document.querySelector('head');
+  const main = document.querySelector('main');
+  const cssFiles = {
+    index: [
+      '/popa-muravya/style.css',
+      '/popa-muravya/style/header.css',
+      '/popa-muravya/style/animation.css'
+    ],
+    quiz: [
+      '/popa-muravya/style.css',
+      '/popa-muravya/style/header.css',
+      '/popa-muravya/style/animation.css',
+      '/popa-muravya/style/quiz.css'
+    ],
+    about: [
+      '/popa-muravya/style.css',
+      '/popa-muravya/style/header.css',
+      '/popa-muravya/style/animation.css',
+      '/popa-muravya/style/about.css'
+    ],
+    // Add more pages here
+  };
+  const scriptFiles = {
+    index: [
+      '/popa-muravya/javascript/script.js',
+      '/popa-muravya/javascript/template.js'
+    ],
+    quiz: [
+      '/popa-muravya/javascript/script.js',
+      '/popa-muravya/javascript/template.js',
+      '/popa-muravya/javascript/quiz.js'
+    ],
+    about: [
+      '/popa-muravya/javascript/script.js',
+      '/popa-muravya/javascript/template.js',
+      '/popa-muravya/javascript/about.js'
+    ],
+    // Add more pages here
+  };
+
+  const newCssFiles = cssFiles[currentPage];
+  newCssFiles.forEach((cssFile) => {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = cssFile;
+    head.appendChild(link);
   });
+
+  // Remove any old CSS files that are no longer needed
+  const oldCssFiles = head.querySelectorAll('link[rel="stylesheet"]');
+  oldCssFiles.forEach((oldCssFile) => {
+    if (!newCssFiles.includes(oldCssFile.href)) {
+      oldCssFile.remove();
+    }
+  });
+
+  const newScriptFiles = scriptFiles[currentPage];
+  main.innerHTML = '';
+  newScriptFiles.forEach((scriptFile) => {
+    const script = document.createElement('script');
+    script.src = scriptFile;
+    script.defer = true;
+    main.appendChild(script);
+  });
+}
+
+barba.init({
+  cacheEnabled: false,
+  transitions: [{
+    async leave() {
+      await loaderIn();
+    },
+    enter() {
+      loaderAway();
+    }
+  }],
+  hooks: {
+    after() {
+      console.log('After hook called');
+
+      // Get the current page from the URL
+      const currentPage = window.location.pathname.split('/').pop();
+
+      // Update the head section with the new CSS files
+      updateHeadSection(currentPage);
+    }
+  }
+});
 }
 
 window.addEventListener('load', function(){
