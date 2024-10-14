@@ -73,24 +73,28 @@ barba.init({
         loaderAway();
       }
     }],
-    // Add hooks here
     hooks: {
       after() {
+        console.log('After hook called');
+  
         // Reload CSS files
         const links = document.querySelectorAll('link[rel="stylesheet"]');
         links.forEach((link) => {
-          link.href = link.href + '?v=' + new Date().getTime();
+          const absoluteUrl = 'https://your-github-username.github.io/your-repo-name/' + link.href;
+          console.log('Reloading CSS file:', absoluteUrl);
+          link.href = absoluteUrl + '?v=' + new Date().getTime();
         });
   
         // Reload JS files
         const scripts = document.querySelectorAll('script[src]');
         scripts.forEach((script) => {
-          script.src = script.src + '?v=' + new Date().getTime();
+          const absoluteUrl = 'https://your-github-username.github.io/your-repo-name/' + script.src;
+          console.log('Reloading JS file:', absoluteUrl);
+          script.src = absoluteUrl + '?v=' + new Date().getTime();
         });
       }
     }
   });
-
 }
 
 window.addEventListener('load', function(){
