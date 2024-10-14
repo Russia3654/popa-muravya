@@ -1,4 +1,5 @@
 function init(){
+    console.log('Initializing...');
 
   const loader = document.querySelector('.loader');
 
