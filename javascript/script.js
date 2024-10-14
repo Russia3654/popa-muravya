@@ -63,7 +63,74 @@ barba.hooks.enter(() => {
 
 });
 
-barba.init({
+function updateHeadSection(currentPage) {
+    const head = document.querySelector('head');
+    const main = document.querySelector('main');
+    const cssFiles = {
+      index: [
+        '/popa-muravya/style.css',
+        '/popa-muravya/style/header.css',
+        '/popa-muravya/style/animation.css'
+      ],
+      quiz: [
+        '/popa-muravya/style.css',
+        '/popa-muravya/style/header.css',
+        '/popa-muravya/style/animation.css',
+        '/popa-muravya/style/quiz.css'
+      ],
+      about: [
+        '/popa-muravya/style.css',
+        '/popa-muravya/style/header.css',
+        '/popa-muravya/style/animation.css',
+        '/popa-muravya/style/about.css'
+      ],
+      // Add more pages here
+    };
+    const scriptFiles = {
+      index: [
+        '/popa-muravya/javascript/script.js',
+        '/popa-muravya/javascript/template.js'
+      ],
+      quiz: [
+        '/popa-muravya/javascript/script.js',
+        '/popa-muravya/javascript/template.js',
+        '/popa-muravya/javascript/quiz.js'
+      ],
+      about: [
+        '/popa-muravya/javascript/script.js',
+        '/popa-muravya/javascript/template.js',
+        '/popa-muravya/javascript/about.js'
+      ],
+      // Add more pages here
+    };
+  
+    const newCssFiles = cssFiles[currentPage];
+    newCssFiles.forEach((cssFile) => {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = cssFile;
+      head.appendChild(link);
+    });
+  
+    // Remove any old CSS files that are no longer needed
+    const oldCssFiles = head.querySelectorAll('link[rel="stylesheet"]');
+    oldCssFiles.forEach((oldCssFile) => {
+      if (!newCssFiles.includes(oldCssFile.href)) {
+        oldCssFile.remove();
+      }
+    });
+  
+    const newScriptFiles = scriptFiles[currentPage];
+    main.innerHTML = '';
+    newScriptFiles.forEach((scriptFile) => {
+      const script = document.createElement('script');
+      script.src = scriptFile;
+      script.defer = true;
+      main.appendChild(script);
+    });
+  }
+  
+  barba.init({
     cacheEnabled: false,
     transitions: [{
       async leave() {
@@ -77,21 +144,11 @@ barba.init({
       after() {
         console.log('After hook called');
   
-        // Reload CSS files
-        const links = document.querySelectorAll('link[rel="stylesheet"]');
-        links.forEach((link) => {
-          const absoluteUrl = 'https://your-github-username.github.io/your-repo-name/' + link.href;
-          console.log('Reloading CSS file:', absoluteUrl);
-          link.href = absoluteUrl + '?v=' + new Date().getTime();
-        });
+        // Get the current page from the URL
+        const currentPage = window.location.pathname.split('/').pop();
   
-        // Reload JS files
-        const scripts = document.querySelectorAll('script[src]');
-        scripts.forEach((script) => {
-          const absoluteUrl = 'https://your-github-username.github.io/your-repo-name/' + script.src;
-          console.log('Reloading JS file:', absoluteUrl);
-          script.src = absoluteUrl + '?v=' + new Date().getTime();
-        });
+        // Update the head section with the new CSS files
+        updateHeadSection(currentPage);
       }
     }
   });
