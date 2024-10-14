@@ -64,6 +64,7 @@ barba.hooks.enter(() => {
 });
 
 barba.init({
+    cacheEnabled: false,
     transitions: [{
         async leave() {
             await loaderIn();
