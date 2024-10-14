@@ -66,15 +66,30 @@ barba.hooks.enter(() => {
 barba.init({
     cacheEnabled: false,
     transitions: [{
-        async leave() {
-            await loaderIn();
-    
-        },
-        enter() {
-            loaderAway();
-        }
-    }]
-})
+      async leave() {
+        await loaderIn();
+      },
+      enter() {
+        loaderAway();
+      }
+    }],
+    // Add hooks here
+    hooks: {
+      after() {
+        // Reload CSS files
+        const links = document.querySelectorAll('link[rel="stylesheet"]');
+        links.forEach((link) => {
+          link.href = link.href + '?v=' + new Date().getTime();
+        });
+  
+        // Reload JS files
+        const scripts = document.querySelectorAll('script[src]');
+        scripts.forEach((script) => {
+          script.src = script.src + '?v=' + new Date().getTime();
+        });
+      }
+    }
+  });
 
 }
 
