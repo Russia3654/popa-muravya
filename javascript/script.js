@@ -45,50 +45,65 @@ function init() {
       const parser = new DOMParser();
       const htmlDoc = parser.parseFromString(data.next.html, 'text/html');
       
-      // Load CSS files
+      // Remove old page-specific stylesheets
+      document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
+        if (!htmlDoc.querySelector(`link[href="${link.getAttribute('href')}"]`)) {
+          link.remove();
+        }
+      });
+  
+      // Load new CSS files
       const cssLinks = htmlDoc.querySelectorAll('link[rel="stylesheet"]');
       cssLinks.forEach(link => {
         if (!document.querySelector(`link[href="${link.getAttribute('href')}"]`)) {
-          document.head.appendChild(link.cloneNode());
+          const newLink = document.createElement('link');
+          newLink.rel = 'stylesheet';
+          newLink.href = link.getAttribute('href');
+          document.head.appendChild(newLink);
         }
       });
-
-      // Load JS files
+  
+      // Remove old page-specific scripts
+      document.querySelectorAll('script').forEach(script => {
+        if (script.src && !htmlDoc.querySelector(`script[src="${script.src}"]`)) {
+          script.remove();
+        }
+      });
+  
+      // Load new JS files
       const scripts = htmlDoc.querySelectorAll('script');
       let scriptsToLoad = scripts.length;
-      if (scriptsToLoad === 0) resolve();
       
-      scripts.forEach(script => {
-        if (script.src && !document.querySelector(`script[src="${script.src}"]`)) {
-          const newScript = document.createElement('script');
-          newScript.src = script.src;
-          newScript.onload = () => {
+      if (scriptsToLoad === 0) {
+        resolve();
+      } else {
+        scripts.forEach(script => {
+          if (script.src) {
+            if (!document.querySelector(`script[src="${script.src}"]`)) {
+              const newScript = document.createElement('script');
+              newScript.src = script.src;
+              newScript.onload = () => {
+                scriptsToLoad--;
+                if (scriptsToLoad === 0) resolve();
+              };
+              document.body.appendChild(newScript);
+            } else {
+              scriptsToLoad--;
+              if (scriptsToLoad === 0) resolve();
+            }
+          } else {
+            // For inline scripts
+            const newScript = document.createElement('script');
+            newScript.textContent = script.textContent;
+            document.body.appendChild(newScript);
             scriptsToLoad--;
             if (scriptsToLoad === 0) resolve();
-          };
-          document.body.appendChild(newScript);
-        } else {
-          scriptsToLoad--;
-          if (scriptsToLoad === 0) resolve();
-        }
-      });
+          }
+        });
+      }
     });
   }
-
-  barba.hooks.before(() => {
-    document.querySelector('html').classList.add('is-transitioning');
-    barba.wrapper.classList.add('is-animating');
-  });
-
-  barba.hooks.after(() => {
-    document.querySelector('html').classList.remove('is-transitioning');
-    barba.wrapper.classList.remove('is-animating');
-  });
-
-  barba.hooks.enter(() => {
-    window.scrollTo(0, 0);
-  });
-
+  
   barba.init({
     cacheEnabled: false,
     transitions: [{
@@ -102,6 +117,22 @@ function init() {
         await loadPageResources(data);
         loaderAway();
         console.log('Enter transition finished');
+      },
+      async after(data) {
+        // This hook runs after the new content has been added to the page
+        // You can use it to reinitialize any scripts that need to run on the new page
+        if (data.next.namespace === 'quiz') {
+          // Reinitialize quiz-specific scripts here
+          if (typeof initQuiz === 'function') {
+            initQuiz();
+          }
+        } else if (data.next.namespace === 'project') {
+          // Reinitialize project-specific scripts here
+          if (typeof initProject === 'function') {
+            initProject();
+          }
+        }
+        // Add similar checks for other page-specific scripts
       }
     }]
   });
