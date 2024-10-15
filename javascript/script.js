@@ -45,28 +45,39 @@ function init() {
       const parser = new DOMParser();
       const htmlDoc = parser.parseFromString(data.next.html, 'text/html');
       
+      // Function to get the full URL of a resource
+      function getFullUrl(url) {
+        const a = document.createElement('a');
+        a.href = url;
+        return a.href;
+      }
+  
       // Remove old page-specific stylesheets
       document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
-        if (!htmlDoc.querySelector(`link[href="${link.getAttribute('href')}"]`)) {
+        const fullHref = getFullUrl(link.getAttribute('href'));
+        if (!Array.from(htmlDoc.querySelectorAll('link[rel="stylesheet"]')).some(newLink => getFullUrl(newLink.getAttribute('href')) === fullHref)) {
           link.remove();
         }
       });
   
       // Load new CSS files
-      const cssLinks = htmlDoc.querySelectorAll('link[rel="stylesheet"]');
-      cssLinks.forEach(link => {
-        if (!document.querySelector(`link[href="${link.getAttribute('href')}"]`)) {
+      htmlDoc.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
+        const fullHref = getFullUrl(link.getAttribute('href'));
+        if (!Array.from(document.querySelectorAll('link[rel="stylesheet"]')).some(existingLink => getFullUrl(existingLink.getAttribute('href')) === fullHref)) {
           const newLink = document.createElement('link');
           newLink.rel = 'stylesheet';
-          newLink.href = link.getAttribute('href');
+          newLink.href = fullHref;
           document.head.appendChild(newLink);
         }
       });
   
       // Remove old page-specific scripts
       document.querySelectorAll('script').forEach(script => {
-        if (script.src && !htmlDoc.querySelector(`script[src="${script.src}"]`)) {
-          script.remove();
+        if (script.src) {
+          const fullSrc = getFullUrl(script.src);
+          if (!Array.from(htmlDoc.querySelectorAll('script')).some(newScript => newScript.src && getFullUrl(newScript.src) === fullSrc)) {
+            script.remove();
+          }
         }
       });
   
@@ -79,9 +90,10 @@ function init() {
       } else {
         scripts.forEach(script => {
           if (script.src) {
-            if (!document.querySelector(`script[src="${script.src}"]`)) {
+            const fullSrc = getFullUrl(script.src);
+            if (!Array.from(document.querySelectorAll('script')).some(existingScript => existingScript.src && getFullUrl(existingScript.src) === fullSrc)) {
               const newScript = document.createElement('script');
-              newScript.src = script.src;
+              newScript.src = fullSrc;
               newScript.onload = () => {
                 scriptsToLoad--;
                 if (scriptsToLoad === 0) resolve();
