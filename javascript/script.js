@@ -40,32 +40,38 @@ function init() {
     });
   }
 
-  function updateHead(nextHtml) {
-    const head = document.head;
-    const newPageHead = nextHtml.match(/<head[^>]*>([\s\S.]*)<\/head>/i)[0];
-    const newHeadContent = new DOMParser().parseFromString(newPageHead, 'text/html').head.children;
+  function loadPageResources(data) {
+    return new Promise((resolve) => {
+      const parser = new DOMParser();
+      const htmlDoc = parser.parseFromString(data.next.html, 'text/html');
+      
+      // Load CSS files
+      const cssLinks = htmlDoc.querySelectorAll('link[rel="stylesheet"]');
+      cssLinks.forEach(link => {
+        if (!document.querySelector(`link[href="${link.getAttribute('href')}"]`)) {
+          document.head.appendChild(link.cloneNode());
+        }
+      });
 
-    // Remove all existing stylesheets and scripts
-    const oldLinks = head.querySelectorAll('link[rel="stylesheet"]');
-    const oldScripts = head.querySelectorAll('script');
-    oldLinks.forEach(link => link.remove());
-    oldScripts.forEach(script => script.remove());
-
-    // Add new elements to head
-    Array.from(newHeadContent).forEach(item => {
-      if (item.tagName === 'LINK' || item.tagName === 'SCRIPT') {
-        head.appendChild(item.cloneNode(true));
-      }
-    });
-  }
-
-  function updateScripts(container) {
-    const newScripts = container.querySelectorAll('script');
-    newScripts.forEach(script => {
-      const newScript = document.createElement('script');
-      Array.from(script.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
-      newScript.appendChild(document.createTextNode(script.innerHTML));
-      script.parentNode.replaceChild(newScript, script);
+      // Load JS files
+      const scripts = htmlDoc.querySelectorAll('script');
+      let scriptsToLoad = scripts.length;
+      if (scriptsToLoad === 0) resolve();
+      
+      scripts.forEach(script => {
+        if (script.src && !document.querySelector(`script[src="${script.src}"]`)) {
+          const newScript = document.createElement('script');
+          newScript.src = script.src;
+          newScript.onload = () => {
+            scriptsToLoad--;
+            if (scriptsToLoad === 0) resolve();
+          };
+          document.body.appendChild(newScript);
+        } else {
+          scriptsToLoad--;
+          if (scriptsToLoad === 0) resolve();
+        }
+      });
     });
   }
 
@@ -93,9 +99,8 @@ function init() {
       },
       async enter(data) {
         console.log('Enter transition started');
-        updateHead(data.next.html);
+        await loadPageResources(data);
         loaderAway();
-        updateScripts(data.next.container);
         console.log('Enter transition finished');
       }
     }]
