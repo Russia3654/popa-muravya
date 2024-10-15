@@ -1,162 +1,105 @@
-function init(){
-    console.log('Initializing...');
+function init() {
+  console.log('Initializing...');
 
   const loader = document.querySelector('.loader');
 
-  gsap.set(loader,{
-    scaleX:0,
-    rotation:10,
-    xPercent:-5,
-    yPercent:-50,
+  gsap.set(loader, {
+    scaleX: 0,
+    rotation: 10,
+    xPercent: -5,
+    yPercent: -50,
     transformOrigin: 'left center',
-    autoAlpha:1
+    autoAlpha: 1
   });
+
   function loaderIn() {
-    // GSAP tween to stretch the loading screen across the whole screen
     return gsap.fromTo(loader, 
-        {
-            rotation: 10,
-            scaleX: 0,
-            xPercent: -5
-        },
-        { 
-            duration: 0.8,
-            xPercent: 0,
-            scaleX: 1, 
-            rotation: 0,
-            ease: 'Power4.inOut', 
-            transformOrigin: 'left center'
-        });
-}
-
-function loaderAway() {
-    // GSAP tween to hide the loading screen
-    return gsap.to(loader, { 
-        duration: 0.8, 
+      {
+        rotation: 10,
         scaleX: 0,
-        xPercent: 5, 
-        rotation: -10, 
-        transformOrigin: 'right center', 
-        ease: 'Power4.inOut'
+        xPercent: -5
+      },
+      { 
+        duration: 0.8,
+        xPercent: 0,
+        scaleX: 1, 
+        rotation: 0,
+        ease: 'Power4.inOut', 
+        transformOrigin: 'left center'
+      });
+  }
+
+  function loaderAway() {
+    return gsap.to(loader, { 
+      duration: 0.8, 
+      scaleX: 0,
+      xPercent: 5, 
+      rotation: -10, 
+      transformOrigin: 'right center', 
+      ease: 'Power4.inOut'
     });
-}
+  }
 
-// do something before the transition starts
-barba.hooks.before(() => {
+  function updateHead(nextHtml) {
+    const head = document.head;
+    const newPageHead = nextHtml.match(/<head[^>]*>([\s\S.]*)<\/head>/i)[0];
+    const newHeadContent = new DOMParser().parseFromString(newPageHead, 'text/html').head.children;
 
+    // Remove all existing stylesheets and scripts
+    const oldLinks = head.querySelectorAll('link[rel="stylesheet"]');
+    const oldScripts = head.querySelectorAll('script');
+    oldLinks.forEach(link => link.remove());
+    oldScripts.forEach(script => script.remove());
+
+    // Add new elements to head
+    Array.from(newHeadContent).forEach(item => {
+      if (item.tagName === 'LINK' || item.tagName === 'SCRIPT') {
+        head.appendChild(item.cloneNode(true));
+      }
+    });
+  }
+
+  function updateScripts(container) {
+    const newScripts = container.querySelectorAll('script');
+    newScripts.forEach(script => {
+      const newScript = document.createElement('script');
+      Array.from(script.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+      newScript.appendChild(document.createTextNode(script.innerHTML));
+      script.parentNode.replaceChild(newScript, script);
+    });
+  }
+
+  barba.hooks.before(() => {
     document.querySelector('html').classList.add('is-transitioning');
     barba.wrapper.classList.add('is-animating');
+  });
 
-});
-
-// do something after the transition finishes
-barba.hooks.after(() => {
-
+  barba.hooks.after(() => {
     document.querySelector('html').classList.remove('is-transitioning');
     barba.wrapper.classList.remove('is-animating');
+  });
 
-});
-
-// scroll to the top of the page
-barba.hooks.enter(() => {
-
+  barba.hooks.enter(() => {
     window.scrollTo(0, 0);
-
-});
-
-function updateHeadSection(currentPage) {
-  const head = document.querySelector('head');
-  const main = document.querySelector('main');
-  const cssFiles = {
-    index: [
-      '/popa-muravya/style.css',
-      '/popa-muravya/style/header.css',
-      '/popa-muravya/style/animation.css'
-    ],
-    quiz: [
-      '/popa-muravya/style.css',
-      '/popa-muravya/style/header.css',
-      '/popa-muravya/style/animation.css',
-      '/popa-muravya/style/quiz.css'
-    ],
-    about: [
-      '/popa-muravya/style.css',
-      '/popa-muravya/style/header.css',
-      '/popa-muravya/style/animation.css',
-      '/popa-muravya/style/about.css'
-    ],
-    // Add more pages here
-  };
-  const scriptFiles = {
-    index: [
-      '/popa-muravya/javascript/script.js',
-      '/popa-muravya/javascript/template.js'
-    ],
-    quiz: [
-      '/popa-muravya/javascript/script.js',
-      '/popa-muravya/javascript/template.js',
-      '/popa-muravya/javascript/quiz.js'
-    ],
-    about: [
-      '/popa-muravya/javascript/script.js',
-      '/popa-muravya/javascript/template.js',
-      '/popa-muravya/javascript/about.js'
-    ],
-    // Add more pages here
-  };
-
-  const newCssFiles = cssFiles[currentPage];
-  newCssFiles.forEach((cssFile) => {
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = cssFile;
-    head.appendChild(link);
   });
 
-  // Remove any old CSS files that are no longer needed
-  const oldCssFiles = head.querySelectorAll('link[rel="stylesheet"]');
-  oldCssFiles.forEach((oldCssFile) => {
-    if (!newCssFiles.includes(oldCssFile.href)) {
-      oldCssFile.remove();
-    }
-  });
-
-  const newScriptFiles = scriptFiles[currentPage];
-  main.innerHTML = '';
-  newScriptFiles.forEach((scriptFile) => {
-    const script = document.createElement('script');
-    script.src = scriptFile;
-    script.defer = true;
-    main.appendChild(script);
-  });
-}
-
-barba.init({
-  cacheEnabled: false,
-  transitions: [{
-    async leave() {
+  barba.init({
+    cacheEnabled: false,
+    transitions: [{
+      async leave() {
         console.log('Leave transition started');
         await loaderIn();
         console.log('Leave transition finished');
       },
-      enter() {
+      async enter(data) {
         console.log('Enter transition started');
+        updateHead(data.next.html);
         loaderAway();
+        updateScripts(data.next.container);
         console.log('Enter transition finished');
       }
-    }],
-    hooks: {
-      after() {
-        console.log('After hook called');
-
-      // Get the current page from the URL
-      const currentPage = window.location.pathname.split('/').pop();
-
-      // Update the head section with the new CSS files
-      updateHeadSection(currentPage);
-    }
-  }
-});
+    }]
+  });
 }
 
 window.addEventListener('load', function(){
