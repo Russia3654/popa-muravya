@@ -1,5 +1,4 @@
 function init() {
-  console.log('Initializing...');
 
   const loader = document.querySelector('.loader');
 
@@ -120,15 +119,11 @@ function init() {
     cacheEnabled: false,
     transitions: [{
       async leave() {
-        console.log('Leave transition started');
         await loaderIn();
-        console.log('Leave transition finished');
       },
       async enter(data) {
-        console.log('Enter transition started');
         await loadPageResources(data);
         loaderAway();
-        console.log('Enter transition finished');
       },
       async after(data) {
         // This hook runs after the new content has been added to the page
