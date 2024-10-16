@@ -12,29 +12,29 @@ function init() {
   });
 
   function loaderIn() {
-    return gsap.fromTo(loader, 
+    return gsap.fromTo(loader,
       {
         rotation: 10,
         scaleX: 0,
         xPercent: -5
       },
-      { 
+      {
         duration: 0.8,
         xPercent: 0,
-        scaleX: 1, 
+        scaleX: 1,
         rotation: 0,
-        ease: 'Power4.inOut', 
+        ease: 'Power4.inOut',
         transformOrigin: 'left center'
       });
   }
 
   function loaderAway() {
-    return gsap.to(loader, { 
-      duration: 0.8, 
+    return gsap.to(loader, {
+      duration: 0.8,
       scaleX: 0,
-      xPercent: 5, 
-      rotation: -10, 
-      transformOrigin: 'right center', 
+      xPercent: 5,
+      rotation: -10,
+      transformOrigin: 'right center',
       ease: 'Power4.inOut'
     });
   }
@@ -43,14 +43,14 @@ function init() {
     return new Promise((resolve) => {
       const parser = new DOMParser();
       const htmlDoc = parser.parseFromString(data.next.html, 'text/html');
-      
+
       // Function to get the full URL of a resource
       function getFullUrl(url) {
         const a = document.createElement('a');
         a.href = url;
         return a.href;
       }
-  
+
       // Remove old page-specific stylesheets
       document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
         const fullHref = getFullUrl(link.getAttribute('href'));
@@ -58,7 +58,7 @@ function init() {
           link.remove();
         }
       });
-  
+
       // Load new CSS files
       htmlDoc.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
         const fullHref = getFullUrl(link.getAttribute('href'));
@@ -69,7 +69,7 @@ function init() {
           document.head.appendChild(newLink);
         }
       });
-  
+
       // Remove old page-specific scripts
       document.querySelectorAll('script').forEach(script => {
         if (script.src) {
@@ -79,11 +79,11 @@ function init() {
           }
         }
       });
-  
+
       // Load new JS files
       const scripts = htmlDoc.querySelectorAll('script');
       let scriptsToLoad = scripts.length;
-      
+
       if (scriptsToLoad === 0) {
         resolve();
       } else {
@@ -114,7 +114,7 @@ function init() {
       }
     });
   }
-  
+
   barba.init({
     cacheEnabled: false,
     transitions: [{
@@ -129,20 +129,12 @@ function init() {
         // This hook runs after the new content has been added to the page
         // You can use it to reinitialize any scripts that need to run on the new page
         if (data.next.namespace === 'quiz') {
-          console.log('Reinitializing quiz');
-          // Re-run the main quiz setup code
-          const quizItems = document.querySelectorAll('.quiz-item');
-          const quizFormContainer = document.querySelector('.quiz-form-container');
-          let userAnswers = [];
-          let currentQuestionIndex = 0;
-  
-          quizItems.forEach((item, index) => {
-            item.addEventListener('click', () => {
-              currentQuestionIndex = 0;
-              userAnswers = []; // Reset user answers
-              displayNextQuestion();
-            });
-          });
+          console.log('Entering quiz page');
+          if (typeof window.initQuiz === 'function') {
+            window.initQuiz();
+          } else {
+            console.error('initQuiz function not found');
+          }
         } else if (data.next.namespace === 'project') {
           // Reinitialize project-specific scripts here
           if (typeof initProject === 'function') {
@@ -155,6 +147,6 @@ function init() {
   });
 }
 
-window.addEventListener('load', function(){
+window.addEventListener('load', function () {
   init();
 });
