@@ -1,7 +1,7 @@
 let questions = [];
 
 function fetchQuestions() {
-  return fetch('http://it-project.yzz.me/get_questions.php')
+  return fetch('https://it-project.yzz.me/get_questions.php')
     .then(response => response.json())
     .then(data => {
       questions = data;
