@@ -129,10 +129,20 @@ function init() {
         // This hook runs after the new content has been added to the page
         // You can use it to reinitialize any scripts that need to run on the new page
         if (data.next.namespace === 'quiz') {
-          // Reinitialize quiz-specific scripts here
-          if (typeof initQuiz === 'function') {
-            initQuiz();
-          }
+          console.log('Reinitializing quiz');
+          // Re-run the main quiz setup code
+          const quizItems = document.querySelectorAll('.quiz-item');
+          const quizFormContainer = document.querySelector('.quiz-form-container');
+          let userAnswers = [];
+          let currentQuestionIndex = 0;
+  
+          quizItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+              currentQuestionIndex = 0;
+              userAnswers = []; // Reset user answers
+              displayNextQuestion();
+            });
+          });
         } else if (data.next.namespace === 'project') {
           // Reinitialize project-specific scripts here
           if (typeof initProject === 'function') {
