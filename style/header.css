@@ -30,7 +30,8 @@
 }
 
 .navbar li a:hover,
-.body-button:hover {
+.body-button:hover,
+.b-button:hover {
   color: #322e2d;
 }
 
