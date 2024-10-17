@@ -1,0 +1,538 @@
+{
+  "quizzes": [
+    {
+      "title": "Valorant",
+      "questions": [
+        {
+          "id": 1,
+          "text": "What is the name of the first map released in Valorant?",
+          "answers": [
+            {
+              "text": "Ascent"
+            },
+            {
+              "text": "Bind"
+            },
+            {
+              "text": "Haven"
+            },
+            {
+              "text": "Split"
+            }
+          ],
+          "correctAnswers": [
+            "Ascent"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Which agent is known for their ability to heal allies?",
+          "answers": [
+            {
+              "text": "Sage"
+            },
+            {
+              "text": "Phoenix"
+            },
+            {
+              "text": "Jett"
+            },
+            {
+              "text": "Reyna"
+            }
+          ],
+          "correctAnswers": [
+            "Sage"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "What is the name of the game mode where players must plant a spike?",
+          "answers": [
+            {
+              "text": "Plant/Defuse"
+            },
+            {
+              "text": "Spike Rus"
+            },
+            {
+              "text": "Deathmatch"
+            },
+            {
+              "text": "Escalation"
+            }
+          ],
+          "correctAnswers": [
+            "Plant/Defuse"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Which agent is known for their ability to create smokes?",
+          "answers": [
+            {
+              "text": "Breach"
+            },
+            {
+              "text": "Omen"
+            },
+            {
+              "text": "Brimestone"
+            },
+            {
+              "text": "Viper"
+            }
+          ],
+          "correctAnswers": [
+            "Breach",
+            "Omen",
+            "Brimestone",
+            "Viper"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "What is the name of the currency used to buy abilities and guns?",
+          "answers": [
+            {
+              "text": "Credits"
+            },
+            {
+              "text": "Valorant Points"
+            },
+            {
+              "text": "Radianite"
+            },
+            {
+              "text": "Creds"
+            }
+          ],
+          "correctAnswers": [
+            "Credits"
+          ]
+        },
+        {
+          "id": 6,
+          "text": "Which agent is known for their ability to create a wall?",
+          "answers": [
+            {
+              "text": "Phoenix"
+            },
+            {
+              "text": "Jett"
+            },
+            {
+              "text": "Reyna"
+            },
+            {
+              "text": "Killjoy"
+            }
+          ],
+          "correctAnswers": [
+            "Phoenix",
+            "Killjoy"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "War Thunder",
+      "questions": [
+        {
+          "id": 7,
+          "text": "What is the name of the first nation available in War Thunder?",
+          "answers": [
+            {
+              "text": "USA"
+            },
+            {
+              "text": "Germany"
+            },
+            {
+              "text": "USSR"
+            },
+            {
+              "text": "United Kingdom"
+            }
+          ],
+          "correctAnswers": [
+            "USA"
+          ]
+        },
+        {
+          "id": 8,
+          "text": "Which tank is known for its high speed and low armor?",
+          "answers": [
+            {
+              "text": "M3 Lee"
+            },
+            {
+              "text": "M4 Sherman"
+            },
+            {
+              "text": "T-34"
+            },
+            {
+              "text": "Panther"
+            }
+          ],
+          "correctAnswers": [
+            "M3 Lee"
+          ]
+        },
+        {
+          "id": 9,
+          "text": "What is the name of the game mode where players must capture points?",
+          "answers": [
+            {
+              "text": "Domination"
+            },
+            {
+              "text": "Conquest"
+            },
+            {
+              "text": "Air Battles"
+            },
+            {
+              "text": "Naval Battles"
+            }
+          ],
+          "correctAnswers": [
+            "Domination"
+          ]
+        },
+        {
+          "id": 10,
+          "text": "Which plane is known for its high maneuverability?",
+          "answers": [
+            {
+              "text": "P-51 Mustang"
+            },
+            {
+              "text": "Bf 109"
+            },
+            {
+              "text": "Spitfire"
+            },
+            {
+              "text": "Zero"
+            }
+          ],
+          "correctAnswers": [
+            "P-51 Mustang",
+            "Bf 109",
+            "Spitfire",
+            "Zero"
+          ]
+        },
+        {
+          "id": 11,
+          "text": "What is the name of the currency used to buy vehicles and upgrades?",
+          "answers": [
+            {
+              "text": "Silver Lions"
+            },
+            {
+              "text": "Golden Eagles"
+            },
+            {
+              "text": "War Bonds"
+            },
+            {
+              "text": "Credits"
+            }
+          ],
+          "correctAnswers": [
+            "Silver Lions"
+          ]
+        },
+        {
+          "id": 12,
+          "text": "Which nation has the most vehicles available in the game?",
+          "answers": [
+            {
+              "text": "USA"
+            },
+            {
+              "text": "Germany"
+            },
+            {
+              "text": "USSR"
+            },
+            {
+              "text": "United Kingdom"
+            }
+          ],
+          "correctAnswers": [
+            "USSR"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "PC Building",
+      "questions": [
+        {
+          "id": 13,
+          "text": "What is the primary function of a CPU?",
+          "answers": [
+            {
+              "text": "To store data"
+            },
+            {
+              "text": "To provide power to components"
+            },
+            {
+              "text": "To execute instructions"
+            },
+            {
+              "text": "To cool the system"
+            }
+          ],
+          "correctAnswers": [
+            "To execute instruction"
+          ]
+        },
+        {
+          "id": 14,
+          "text": "Which component is responsible for storing data",
+          "answers": [
+            {
+              "text": "CPU"
+            },
+            {
+              "text": "GPU"
+            },
+            {
+              "text": "RAM"
+            },
+            {
+              "text": "HDD"
+            }
+          ],
+          "correctAnswers": [
+            "HDD",
+            "RAM"
+          ]
+        },
+        {
+          "id": 15,
+          "text": "What is the purpose of a power supply unit?",
+          "answers": [
+            {
+              "text": "To cool the system"
+            },
+            {
+              "text": "To provide power to components"
+            },
+            {
+              "text": "To store data"
+            },
+            {
+              "text": "To execute instructions"
+            }
+          ],
+          "correctAnswers": [
+            "To provide power to components"
+          ]
+        },
+        {
+          "id": 16,
+          "text": "Which type of RAM is commonly used in modern systems?",
+          "answers": [
+            {
+              "text": "DDR3"
+            },
+            {
+              "text": "DDR4"
+            },
+            {
+              "text": "DDR5"
+            },
+            {
+              "text": "DDR6"
+            }
+          ],
+          "correctAnswers": [
+            "DDR4",
+            "DDR5"
+          ]
+        },
+        {
+          "id": 17,
+          "text": "What is the primary function of a GPU?",
+          "answers": [
+            {
+              "text": "To execute instructions"
+            },
+            {
+              "text": "To store data"
+            },
+            {
+              "text": "To provide power to components"
+            },
+            {
+              "text": "To render graphics"
+            }
+          ],
+          "correctAnswers": [
+            "To render graphics"
+          ]
+        },
+        {
+          "id": 18,
+          "text": "Which component is responsible for cooling the system?",
+          "answers": [
+            {
+              "text": "CPU"
+            },
+            {
+              "text": "GPU"
+            },
+            {
+              "text": "RAM"
+            },
+            {
+              "text": "Cooling System"
+            }
+          ],
+          "correctAnswers": [
+            "Cooling System"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "League of Legends",
+      "questions": [
+        {
+          "id": 19,
+          "text": "Which Champions are from Noxus",
+          "answers": [
+            {
+              "text": "Briar"
+            },
+            {
+              "text": "Irelia"
+            },
+            {
+              "text": "Mordekaiser"
+            },
+            {
+              "text": "Jinx"
+            }
+          ],
+          "correctAnswers": [
+            "Briar",
+            "Mordekaiser"
+          ]
+        },
+        {
+          "id": 20,
+          "text": "What champion has Special Voice-line when they buy the item 'Void Staff'",
+          "answers": [
+            {
+              "text": "Evelynn"
+            },
+            {
+              "text": "Neeko"
+            },
+            {
+              "text": "Ahri"
+            },
+            {
+              "text": "Gragas"
+            }
+          ],
+          "correctAnswers": [
+            "Evelynn"
+          ]
+        },
+        {
+          "id": 21,
+          "text": "What is the name of Yasuo's 1st Ability?",
+          "answers": [
+            {
+              "text": "Last Breath"
+            },
+            {
+              "text": "Sweeping Blade"
+            },
+            {
+              "text": "Steel Tempest"
+            },
+            {
+              "text": "Wind Wall"
+            }
+          ],
+          "correctAnswers": [
+            "Steel Tempest"
+          ]
+        },
+        {
+          "id": 22,
+          "text": "What is the name of the jungle monster that only spawns after 20 minutes?",
+          "answers": [
+            {
+              "text": "Elder Dragon"
+            },
+            {
+              "text": "Void Grubd"
+            },
+            {
+              "text": "Barron Nashor"
+            },
+            {
+              "text": "Rift Herald"
+            }
+          ],
+          "correctAnswers": [
+            "Barron Nashor"
+          ]
+        },
+        {
+          "id": 23,
+          "text": "What is the name of this Champion",
+          "answers": [
+            {
+              "text": "Vender"
+            },
+            {
+              "text": "John Wick"
+            },
+            {
+              "text": "Rengar"
+            },
+            {
+              "text": "WarWick"
+            }
+          ],
+          "correctAnswers": [
+            "WarWick"
+          ]
+        },
+        {
+          "id": 24,
+          "text": "Who is know as the God-Killer?",
+          "answers": [
+            {
+              "text": "Rhaast"
+            },
+            {
+              "text": "Aatrox"
+            },
+            {
+              "text": "Pantheon"
+            },
+            {
+              "text": "Volibear"
+            }
+          ],
+          "correctAnswers": [
+            "Aatrox"
+          ]
+        }
+      ]
+    }
+  ]
+}
