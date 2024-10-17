@@ -110,7 +110,7 @@ function initQuiz() {
       nextButton.className = 'button v18';
 
       const nextButtonLabel = document.createElement('div');
-      nextButtonLabel.className = 'label b-buton';
+      nextButtonLabel.className = 'label b-button';
       nextButtonLabel.textContent = 'Next';
       nextButton.appendChild(nextButtonLabel);
 
@@ -141,7 +141,7 @@ function initQuiz() {
       submitButton.className = 'button v18';
 
       const submitButtonLabel = document.createElement('div');
-      submitButtonLabel.className = 'label b-buton';
+      submitButtonLabel.className = 'label b-button';
       submitButtonLabel.textContent = 'Submit';
       submitButton.appendChild(submitButtonLabel);
 
@@ -173,7 +173,7 @@ function initQuiz() {
     previousButton.className = 'button v18';
 
     const previousButtonLabel = document.createElement('div');
-    previousButtonLabel.className = 'label b-buton';
+    previousButtonLabel.className = 'label b-button';
     previousButtonLabel.textContent = 'Previous';
     previousButton.appendChild(previousButtonLabel);
 
@@ -205,7 +205,7 @@ function initQuiz() {
     exitButton.className = 'button v18';
 
     const exitButtonLabel = document.createElement('div');
-    exitButtonLabel.className = 'label b-buton';
+    exitButtonLabel.className = 'label b-button';
     exitButtonLabel.textContent = 'Exit';
     exitButton.appendChild(exitButtonLabel);
 
@@ -258,7 +258,7 @@ function initQuiz() {
     restartButton.className = 'button v18';
 
     const restartButtonLabel = document.createElement('div');
-    restartButtonLabel.className = 'label b-buton';
+    restartButtonLabel.className = 'label b-button';
     restartButtonLabel.textContent = 'Restart';
     restartButton.appendChild(restartButtonLabel);
 
