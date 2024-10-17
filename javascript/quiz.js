@@ -3,6 +3,7 @@ function initQuiz() {
   const quizFormContainer = document.querySelector('.quiz-form-container');
   let userAnswers = [];
   let currentQuestionIndex = 0;
+  let selectedQuizIndex = 0;
   const questions = [
     {
       title: "Valorant",
@@ -290,11 +291,11 @@ function initQuiz() {
     }
   ];
 
-
-
   quizItems.forEach((item, index) => {
     item.addEventListener('click', () => {
+      selectedQuizIndex = index;
       currentQuestionIndex = 0;
+      userAnswers = [];
       displayNextQuestion();
     });
   });
@@ -316,7 +317,7 @@ function initQuiz() {
     quizTitle.textContent = `Question ${questionIndex + 1}`;
     quizForm.appendChild(quizTitle);
 
-    const question = questions[0].questions[questionIndex]; // Accessing the questions array
+    const question = questions[selectedQuizIndex].questions[questionIndex]; // Accessing the questions array
     if (!question) {
       console.error('Question not found for index:', questionIndex);
       return; // Exit the function if the question is not found
@@ -516,13 +517,13 @@ function initQuiz() {
     let score = 0;
     userAnswers.forEach((answer, index) => {
       // Check if the answer matches the correct answers
-      if (JSON.stringify(answer) === JSON.stringify(questions[0].questions[index].correctAnswers)) {
+      if (JSON.stringify(answer) === JSON.stringify(questions[selectedQuizIndex].questions[index].correctAnswers)) {
         score++;
       }
     });
 
     const resultText = document.createElement('p');
-    resultText.textContent = `You scored ${score} out of ${questions[0].questions.length}`;
+    resultText.textContent = `You scored ${score} out of ${questions[selectedQuizIndex].questions.length}`;
     resultContainer.appendChild(resultText);
 
     // Restart button logic
