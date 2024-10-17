@@ -4,7 +4,7 @@ function initQuiz() {
   let userAnswers = [];
   let currentQuestionIndex = 0;
   let selectedQuizIndex = 0;
-  const questions = [];
+  let questions = [];
 
   fetch('/popa-muravya/assets/json/question.json')
     .then(response => response.json())
