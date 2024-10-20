@@ -1,0 +1,34 @@
+/* skills container */
+.skills-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+.skills-item-container{
+  display: flex;
+  width: 400px;
+  height: 200px;
+}
+.skills-items{
+  position: absolute;
+  height: 200px;
+  width: 400px;
+  display: flex;
+}
+.skills-text-area{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-evenly;
+  margin-left: 20px;
+}
+/* image */
+.bg-image{
+  position: relative;
+  object-fit: cover;
+  width: 100%;
+}
+.skills-items .image{
+  position: relative;
+  height: 100%;
+  bottom: -9px;
+}
