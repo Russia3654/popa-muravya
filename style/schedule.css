@@ -8,6 +8,7 @@
 }
 .subject-container{
   display: flex;
+  transition: 0.5s;
 }
 .monday{
   grid-column: 2;
@@ -18,59 +19,24 @@
 .time{
   grid-column: 1;
 }
-/* computer network */
-.subject-container.cn-1{
-  grid-row: 2;
-  grid-column: 2;
-}
-.subject-container.cn-2{
-  grid-row: 2;
-  grid-column: 6;
-}
-/* chemistry */
-.subject-container.ch-1{
+
+.start-hh-15{
   position: relative;
-  grid-row: 6;
-  grid-column: 2;
-  top: 50%;
+  top:25%
 }
-.subject-container.ch-2{
+.start-hh-30{
   position: relative;
-  grid-row: 6;
-  grid-column: 6;
-  top: 50%;
+  top:50%
 }
-/* discreet method */
-.subject-container.ds-1{
-  grid-row: 5;
-  grid-column: 3;
-}
-.subject-container.ds-2{
-  grid-row: 5;
-  grid-column: 5;
-}
-/* it */
-.subject-container.it-1{
+.start-hh-45{
   position: relative;
-  grid-row: 3;
-  grid-column: 3;
-  top: 50%;
+  top:75%
 }
-.subject-container.it-2{
-  position: relative;
-  grid-row: 3;
-  grid-column: 5;
-  top: 50%;
-}
-/* subjects */
-.subject{
-  width: 100%;
+.end-hh-15{
   height: 125%;
 }
-.cn:hover,
-.ch:hover,
-.it:hover,
-.ds:hover{
+
+.subject-container:hover{
   background-color: #ff5700;
   color: #322e2d;
 }

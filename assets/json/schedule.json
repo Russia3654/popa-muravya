@@ -1,0 +1,122 @@
+{
+  "schedules": [
+    {
+      "day": "Monday",
+      "start_time": "08:00",
+      "end_time": "09:15",
+      "subject_id": 3,
+      "semester_id": 4
+    },
+    {
+      "day": "Monday",
+      "start_time": "12:30",
+      "end_time": "13:45",
+      "subject_id": 4,
+      "semester_id": 4
+    },
+    {
+      "day": "Tuesday",
+      "start_time": "09:30",
+      "end_time": "10:30",
+      "subject_id": 2,
+      "semester_id": 4
+    },
+    {
+      "day": "Tuesday",
+      "start_time": "11:00",
+      "end_time": "12:15",
+      "subject_id": 1,
+      "semester_id": 4
+    },
+    {
+      "day": "Thursday",
+      "start_time": "09:30",
+      "end_time": "10:30",
+      "subject_id": 2,
+      "semester_id": 4
+    },
+    {
+      "day": "Thursday",
+      "start_time": "11:00",
+      "end_time": "12:15",
+      "subject_id": 1,
+      "semester_id": 4
+    },
+    {
+      "day": "Friday",
+      "start_time": "08:00",
+      "end_time": "09:15",
+      "subject_id": 3,
+      "semester_id": 4
+    },
+    {
+      "day": "Friday",
+      "start_time": "12:30",
+      "end_time": "13:45",
+      "subject_id": 4,
+      "semester_id": 4
+    }
+  ],
+  "subjects": [
+    {
+      "id": 1,
+      "code": "CSC211",
+      "name": "Discrete Method",
+      "teacher_id": 2
+    },
+    {
+      "id": 2,
+      "code": "CSC360",
+      "name": "Internet Technology",
+      "teacher_id": 4
+    },
+    {
+      "id": 3,
+      "code": "CSC420",
+      "name": "Computer Network",
+      "teacher_id": 1
+    },
+    {
+      "id": 4,
+      "code": "CHM212",
+      "name": "General Chemistry",
+      "teacher_id": 3
+    }
+  ],
+  "teachers": [
+    {
+      "id": 1,
+      "name": "Dr. Jacques Demerjian"
+    },
+    {
+      "id": 2,
+      "name": "Dr Joseph Georges Wassaf"
+    },
+    {
+      "id": 3,
+      "name": "Ms. Rita Tony Sassine"
+    },
+    {
+      "id": 4,
+      "name": "Ziad Charbel Eid"
+    }
+  ],
+  "semesters": [
+    {
+      "id": 1,
+      "name": "Fall 2022-2023"
+    },
+    {
+      "id": 2,
+      "name": "Spring 2022-2023"
+    },
+    {
+      "id": 3,
+      "name": "Spring 2023-2024"
+    },
+    {
+      "id": 4,
+      "name": "Fall 2024-2025"
+    }
+  ]
+}
