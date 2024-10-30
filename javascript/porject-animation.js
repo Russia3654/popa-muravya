@@ -50,19 +50,27 @@ function initProjectAnimation() {
     const currentTime = new Date().getTime();
     const timeDiff = currentTime - lastScrollTime;
     lastScrollTime = currentTime;
-
+  
     const scrollDelta = event.deltaY;
     scrollDirection = scrollDelta > 0 ? 1 : -1;
-
+  
+    // Adjust sliderRotation based on scroll direction
     sliderRotation += scrollDirection * 10;
-    sliderRotation = Math.max(0, Math.min(sliderRotation, 360));
+  
+    // Implement wraparound behavior
+    if (sliderRotation < 0) {
+      sliderRotation = 360;
+    } else if (sliderRotation > 360) {
+      sliderRotation = 0;
+    }
+  
     sliderRotation = Math.round(sliderRotation);
-
+  
     // update autoRotation value
     autoRotation = sliderRotation;
-
+  
     updateSliderRotation();
-
+  
     // reset flag after a short delay to allow for smooth scrolling
     setTimeout(() => {
       isScrolling = false;

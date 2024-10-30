@@ -5,89 +5,86 @@
       "questions": [
         {
           "id": 1,
-          "text": "What is the name of the first map released in Valorant?",
+          "text": "Which agent have the ability to teleport?",
           "answers": [
             {
-              "text": "Ascent"
-            },
-            {
-              "text": "Bind"
-            },
-            {
-              "text": "Haven"
-            },
-            {
-              "text": "Split"
-            }
-          ],
-          "correctAnswers": [
-            "Ascent"
-          ]
-        },
-        {
-          "id": 2,
-          "text": "Which agent is known for their ability to heal allies?",
-          "answers": [
-            {
-              "text": "Sage"
-            },
-            {
-              "text": "Phoenix"
-            },
-            {
-              "text": "Jett"
-            },
-            {
-              "text": "Reyna"
-            }
-          ],
-          "correctAnswers": [
-            "Sage"
-          ]
-        },
-        {
-          "id": 3,
-          "text": "What is the name of the game mode where players must plant a spike?",
-          "answers": [
-            {
-              "text": "Plant/Defuse"
-            },
-            {
-              "text": "Spike Rus"
-            },
-            {
-              "text": "Deathmatch"
-            },
-            {
-              "text": "Escalation"
-            }
-          ],
-          "correctAnswers": [
-            "Plant/Defuse"
-          ]
-        },
-        {
-          "id": 4,
-          "text": "Which agent is known for their ability to create smokes?",
-          "answers": [
-            {
-              "text": "Breach"
+              "text": "Deadlock"
             },
             {
               "text": "Omen"
             },
             {
-              "text": "Brimestone"
+              "text": "Gekko"
             },
             {
-              "text": "Viper"
+              "text": "Yoru"
             }
           ],
           "correctAnswers": [
-            "Breach",
-            "Omen",
-            "Brimestone",
-            "Viper"
+            "Omen", "Yoru"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "How many plants are there on map 'Lotus'?",
+          "answers": [
+            {
+              "text": "1"
+            },
+            {
+              "text": "4"
+            },
+            {
+              "text": "2"
+            },
+            {
+              "text": "3"
+            }
+          ],
+          "correctAnswers": [
+            "3"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "How many smokes does Viper has?",
+          "answers": [
+            {
+              "text": "3"
+            },
+            {
+              "text": "1"
+            },
+            {
+              "text": "2"
+            },
+            {
+              "text": "4"
+            }
+          ],
+          "correctAnswers": [
+            "2"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Form where is that agent?",
+          "answers": [
+            {
+              "text": "Russia"
+            },
+            {
+              "text": "USA"
+            },
+            {
+              "text": "Mexico"
+            },
+            {
+              "text": "Spain"
+            }
+          ],
+          "correctAnswers": [
+            "Mexico"
           ]
         },
         {
@@ -113,19 +110,19 @@
         },
         {
           "id": 6,
-          "text": "Which agent is known for their ability to create a wall?",
+          "text": "what are the abilities of this agent?",
           "answers": [
             {
-              "text": "Phoenix"
+              "text": "Trapwire"
             },
             {
-              "text": "Jett"
+              "text": "Fakeout"
             },
             {
-              "text": "Reyna"
+              "text": "Tour De France"
             },
             {
-              "text": "Killjoy"
+              "text": "Kill Contract"
             }
           ],
           "correctAnswers": [
