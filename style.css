@@ -3,8 +3,18 @@ body {
   background-color: #322e2d;
   color: #d6d3ce;
 }
-
 main {
   display: flex;
   justify-content: space-between;
+}
+.background-image{
+  position: fixed;
+  background-image: url("/popa-muravya/assets/vid2(150ms).gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100%;
+  width: 100%;
+  z-index: -100;
+  filter: blur(20px) ;
 }
