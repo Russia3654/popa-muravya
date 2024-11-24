@@ -1,7 +1,7 @@
 function initQuiz() {
   const quizItems = document.querySelectorAll('.quiz-item');
   const quizFormContainer = document.querySelector('.quiz-form-container');
-  let userAnswers = [];
+  let userAnswers = new Map();
   let currentQuestionIndex = 0;
   let selectedQuizIndex = 0;
   let questions = [];
@@ -20,15 +20,27 @@ function initQuiz() {
       item.addEventListener('click', () => {
         selectedQuizIndex = index;
         currentQuestionIndex = 0;
-        userAnswers = [];
+        userAnswers.clear();
         displayNextQuestion();
       });
     });
   }
 
   function displayNextQuestion() {
+    const question = questions[selectedQuizIndex].questions[currentQuestionIndex]; // Access the current question
+    const selectedAnswers = Array.from(quizFormContainer.querySelectorAll(`input[name="q${question.id}"]:checked`)).map(input => input.value);
+    userAnswers.set(question.id, selectedAnswers);
+    if (!question) {
+      console.error('Question not found for index:', currentQuestionIndex);
+      return; // Exit the function if the question is not found
+    }
+    const quizImageBackground = document.createElement('img');
+    quizImageBackground.className = 'quiz-image-background';
+    quizImageBackground.src = question.background;
+
     const quizForm = createQuizForm(currentQuestionIndex);
     quizFormContainer.innerHTML = '';
+    quizFormContainer.appendChild(quizImageBackground);
     quizFormContainer.appendChild(quizForm);
     quizFormContainer.classList.remove('empty');
   }
@@ -49,21 +61,35 @@ function initQuiz() {
       return; // Exit the function if the question is not found
     }
 
-    const questionElement = document.createElement('p');
-    questionElement.textContent = question.text;
-    quizForm.appendChild(questionElement);
+    const questionContainer = document.createElement('div');
+    if (question.image) {
+      questionContainer.className = 'question-container-image';
+    }
+    else {
+      questionContainer.className = 'question-container';
+    }
+    quizForm.appendChild(questionContainer);
 
     // Add question image if it exists
     if (question.image) {
       const questionImage = document.createElement('img');
+      questionImage.className = 'question-image'
       questionImage.src = question.image;
       questionImage.alt = 'Question Image';
-      quizForm.appendChild(questionImage);
+      questionContainer.appendChild(questionImage);
     }
+
+    const questionTextArea = document.createElement('div');
+    questionTextArea.className = 'question-text-area';
+    questionContainer.appendChild(questionTextArea);
+
+    const questionElement = document.createElement('p');
+    questionElement.textContent = question.text;
+    questionTextArea.appendChild(questionElement);
 
     const answersContainer = document.createElement('div');
     answersContainer.className = 'answers-container';
-    quizForm.appendChild(answersContainer);
+    questionTextArea.appendChild(answersContainer);
 
     if (!question.answers) {
       console.error('Answers not found for question:', question);
@@ -83,6 +109,10 @@ function initQuiz() {
       input.name = `q${question.id}`; // Keep the same name for grouping
       input.value = answer.text;
       answerContainer.appendChild(input);
+
+      if (userAnswers.has(question.id) && userAnswers.get(question.id).includes(answer.text)) {
+        input.checked = true; // Mark as checked if previously selected
+    }
 
       const label = document.createElement('label');
       label.htmlFor = `q${question.id}-${index}`; // Corrected from 'for' to 'htmlFor'
@@ -127,7 +157,7 @@ function initQuiz() {
       nextButton.addEventListener('click', () => {
         const selectedAnswers = Array.from(quizForm.querySelectorAll(`input[name="q${question.id}"]:checked`))
           .map(input => input.value);
-        userAnswers.push(selectedAnswers);
+          userAnswers.set(question.id, selectedAnswers);
         currentQuestionIndex++;
         displayNextQuestion();
       });
@@ -159,7 +189,7 @@ function initQuiz() {
         event.preventDefault();
         const selectedAnswers = Array.from(quizForm.querySelectorAll(`input[name="q${question.id}"]:checked`))
           .map(input => input.value);
-        userAnswers.push(selectedAnswers);
+          userAnswers.set(question.id, selectedAnswers);
         displayResult();
       });
 
@@ -241,11 +271,14 @@ function initQuiz() {
 
     // Calculate score
     let score = 0;
-    userAnswers.forEach((answer, index) => {
-      // Check if the answer matches the correct answers
-      if (JSON.stringify(answer) === JSON.stringify(questions[selectedQuizIndex].questions[index].correctAnswers)) {
-        score++;
-      }
+    questions[selectedQuizIndex].questions.forEach((question) => {
+        const correctAnswers = question.correctAnswers;
+        const userSelectedAnswers = userAnswers.get(question.id) || [];
+        
+        // Check if the user answers match the correct answers
+        if (JSON.stringify(userSelectedAnswers) === JSON.stringify(correctAnswers)) {
+            score++;
+        }
     });
 
     const resultText = document.createElement('p');
@@ -274,7 +307,7 @@ function initQuiz() {
     restartButtonContainer.appendChild(restartButton);
     restartButton.addEventListener('click', () => {
       currentQuestionIndex = 0;
-      userAnswers = [];
+      userAnswers = new Map();
       displayNextQuestion();
     });
 
