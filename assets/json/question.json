@@ -6,7 +6,7 @@
         {
           "id": 1,
           "text": "Which agent have the ability to teleport?",
-          "background": "assets/image/quiz/in-quiz/valorant/valorant-background.jpg",
+          "background": "/popa-muravya/assets/image/quiz/in-quiz/valorant/valorant-background.jpg",
           "answers": [
             {
               "text": "Deadlock"
@@ -28,7 +28,7 @@
         {
           "id": 2,
           "text": "How many plants are there on map 'Lotus'?",
-          "background": "assets/image/quiz/in-quiz/valorant/valorant-background.jpg",
+          "background": "/popa-muravya/assets/image/quiz/in-quiz/valorant/valorant-background.jpg",
           "answers": [
             {
               "text": "1"
@@ -50,7 +50,7 @@
         {
           "id": 3,
           "text": "How many smokes does Viper has?",
-          "background": "assets/image/quiz/in-quiz/valorant/valorant-background.jpg",
+          "background": "/popa-muravya/assets/image/quiz/in-quiz/valorant/valorant-background.jpg",
           "answers": [
             {
               "text": "3"
@@ -72,8 +72,8 @@
         {
           "id": 4,
           "text": "Form where is that agent?",
-          "image": "assets/image/quiz/in-quiz/valorant/reyna.png",
-          "background": "assets/image/quiz/in-quiz/valorant/valorant-background.jpg",
+          "image": "/popa-muravya/assets/image/quiz/in-quiz/valorant/reyna.png",
+          "background": "/popa-muravya/assets/image/quiz/in-quiz/valorant/valorant-background.jpg",
           "answers": [
             {
               "text": "Russia"
@@ -95,7 +95,7 @@
         {
           "id": 5,
           "text": "What is the name of the currency used to buy abilities and guns?",
-          "background": "assets/image/quiz/in-quiz/valorant/valorant-background.jpg",
+          "background": "/popa-muravya/assets/image/quiz/in-quiz/valorant/valorant-background.jpg",
           "answers": [
             {
               "text": "Credits"
@@ -117,8 +117,8 @@
         {
           "id": 6,
           "text": "what are the abilities of this agent?",
-          "image": "assets/image/quiz/in-quiz/valorant/iso.png",
-          "background": "assets/image/quiz/in-quiz/valorant/valorant-background.jpg",
+          "image": "/popa-muravya/assets/image/quiz/in-quiz/valorant/iso.png",
+          "background": "/popa-muravya/assets/image/quiz/in-quiz/valorant/valorant-background.jpg",
           "answers": [
             {
               "text": "Trapwire"
@@ -145,7 +145,7 @@
         {
           "id": 7,
           "text": "What is the name of the first nation available in War Thunder?",
-          "background":"assets/image/quiz/in-quiz/warThunder/background.png",
+          "background":"/popa-muravya/assets/image/quiz/in-quiz/warThunder/background.png",
           "answers": [
             {
               "text": "USA"
@@ -167,7 +167,7 @@
         {
           "id": 8,
           "text": "Which tank is known for its high speed and low armor?",
-          "background":"assets/image/quiz/in-quiz/warThunder/background.png",
+          "background":"/popa-muravya/assets/image/quiz/in-quiz/warThunder/background.png",
           "answers": [
             {
               "text": "M3 Lee"
@@ -189,7 +189,7 @@
         {
           "id": 9,
           "text": "What is the name of the game mode where players must capture points?",
-          "background":"assets/image/quiz/in-quiz/warThunder/background.png",
+          "background":"/popa-muravya/assets/image/quiz/in-quiz/warThunder/background.png",
           "answers": [
             {
               "text": "Domination"
@@ -211,7 +211,7 @@
         {
           "id": 10,
           "text": "Which plane is known for its high maneuverability?",
-          "background":"assets/image/quiz/in-quiz/warThunder/background.png",
+          "background":"/popa-muravya/assets/image/quiz/in-quiz/warThunder/background.png",
           "answers": [
             {
               "text": "P-51 Mustang"
@@ -235,7 +235,7 @@
         {
           "id": 11,
           "text": "What is the name of the currency used to buy vehicles and upgrades?",
-          "background":"assets/image/quiz/in-quiz/warThunder/background.png",
+          "background":"/popa-muravya/assets/image/quiz/in-quiz/warThunder/background.png",
           "answers": [
             {
               "text": "Silver Lions"
@@ -257,7 +257,7 @@
         {
           "id": 12,
           "text": "Which nation has the most vehicles available in the game?",
-          "background":"assets/image/quiz/in-quiz/warThunder/background.png",
+          "background":"/popa-muravya/assets/image/quiz/in-quiz/warThunder/background.png",
           "answers": [
             {
               "text": "USA"
@@ -284,7 +284,7 @@
         {
           "id": 13,
           "text": "What is the primary function of a CPU?",
-          "background":"assets/image/quiz/in-quiz/pcBuilder/pcBuilder.jpg",
+          "background":"/popa-muravya/assets/image/quiz/in-quiz/pcBuilder/pcBuilder.jpg",
           "answers": [
             {
               "text": "To store data"
@@ -306,7 +306,7 @@
         {
           "id": 14,
           "text": "Which component is responsible for storing data",
-          "background":"assets/image/quiz/in-quiz/pcBuilder/pcBuilder.jpg",
+          "background":"/popa-muravya/assets/image/quiz/in-quiz/pcBuilder/pcBuilder.jpg",
           "answers": [
             {
               "text": "CPU"
@@ -329,7 +329,7 @@
         {
           "id": 15,
           "text": "What is the purpose of a power supply unit?",
-          "background":"assets/image/quiz/in-quiz/pcBuilder/pcBuilder.jpg",
+          "background":"/popa-muravya/assets/image/quiz/in-quiz/pcBuilder/pcBuilder.jpg",
           "answers": [
             {
               "text": "To cool the system"
@@ -351,7 +351,7 @@
         {
           "id": 16,
           "text": "Which type of RAM is commonly used in modern systems?",
-          "background":"assets/image/quiz/in-quiz/pcBuilder/pcBuilder.jpg",
+          "background":"/popa-muravya/assets/image/quiz/in-quiz/pcBuilder/pcBuilder.jpg",
           "answers": [
             {
               "text": "DDR3"
@@ -374,7 +374,7 @@
         {
           "id": 17,
           "text": "What is the primary function of a GPU?",
-          "background":"assets/image/quiz/in-quiz/pcBuilder/pcBuilder.jpg",
+          "background":"/popa-muravya/assets/image/quiz/in-quiz/pcBuilder/pcBuilder.jpg",
           "answers": [
             {
               "text": "To execute instructions"
@@ -396,7 +396,7 @@
         {
           "id": 18,
           "text": "Which component is responsible for cooling the system?",
-          "background":"assets/image/quiz/in-quiz/pcBuilder/pcBuilder.jpg",
+          "background":"/popa-muravya/assets/image/quiz/in-quiz/pcBuilder/pcBuilder.jpg",
           "answers": [
             {
               "text": "CPU"
@@ -423,7 +423,7 @@
         {
           "id": 19,
           "text": "Which Champions are from Noxus",
-          "background":"assets/image/quiz/in-quiz/league/noxus.jpg",
+          "background":"/popa-muravya/assets/image/quiz/in-quiz/league/noxus.jpg",
           "answers": [
             {
               "text": "Briar"
@@ -446,7 +446,7 @@
         {
           "id": 20,
           "text": "What champion has Special Voice-line when they buy the item 'Void Staff'",
-          "background":"assets/image/quiz/in-quiz/league/shadow.jpg",
+          "background":"/popa-muravya/assets/image/quiz/in-quiz/league/shadow.jpg",
           "answers": [
             {
               "text": "Evelynn"
@@ -468,7 +468,7 @@
         {
           "id": 21,
           "text": "What is the name of Yasuo's 1st Ability?",
-          "background":"assets/image/quiz/in-quiz/league/ionia.jpg",
+          "background":"/popa-muravya/assets/image/quiz/in-quiz/league/ionia.jpg",
           "answers": [
             {
               "text": "Last Breath"
@@ -490,7 +490,7 @@
         {
           "id": 22,
           "text": "What is the name of the jungle monster that only spawns after 20 minutes?",
-          "background":"assets/image/quiz/in-quiz/league/freljord.jpg",
+          "background":"/popa-muravya/assets/image/quiz/in-quiz/league/freljord.jpg",
           "answers": [
             {
               "text": "Elder Dragon"
@@ -512,8 +512,8 @@
         {
           "id": 23,
           "text": "What is the name of this Champion",
-          "image": "assets/image/quiz/in-quiz/league/warwick.png",
-          "background":"assets/image/quiz/in-quiz/league/zaun.jpg",
+          "image": "/popa-muravya/assets/image/quiz/in-quiz/league/warwick.png",
+          "background":"/popa-muravya/assets/image/quiz/in-quiz/league/zaun.jpg",
           "answers": [
             {
               "text": "Vender"
@@ -535,7 +535,7 @@
         {
           "id": 24,
           "text": "Who is know as the God-Killer?",
-          "background":"assets/image/quiz/in-quiz/league/shurima.jpg",
+          "background":"/popa-muravya/assets/image/quiz/in-quiz/league/shurima.jpg",
           "answers": [
             {
               "text": "Rhaast"
