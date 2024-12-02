@@ -22,6 +22,14 @@ function initQuiz() {
         currentQuestionIndex = 0;
         userAnswers.clear();
         displayNextQuestion();
+
+        quizItems.forEach(innerItem => {
+          if (innerItem !== item) {
+            innerItem.classList.add('grayscale');
+          } else {
+            innerItem.classList.remove('grayscale');
+          }
+        });
       });
     });
   }
@@ -42,6 +50,15 @@ function initQuiz() {
     quizFormContainer.innerHTML = '';
     quizFormContainer.appendChild(quizImageBackground);
     quizFormContainer.appendChild(quizForm);
+    if(question.light === "true"){
+      quizFormContainer.classList.add('light-quiz-form-font');
+      quizFormContainer.classList.remove('letter-border');
+    }
+    if (question.light === "false"){
+      quizFormContainer.classList.remove('light-quiz-form-font');
+      quizFormContainer.classList.add('letter-border');
+    }
+
     quizFormContainer.classList.remove('empty');
   }
 
@@ -133,6 +150,10 @@ function initQuiz() {
       answersContainer.appendChild(answerContainer);
     });
 
+    const quizButtonContainer = document.createElement('div');
+    quizButtonContainer.className = 'quiz-button-container';
+    quizForm.appendChild(quizButtonContainer);
+
     // Next button logic
     if (questionIndex < questions[0].questions.length - 1) {
       const nextButtonContainer = document.createElement('section');
@@ -163,7 +184,7 @@ function initQuiz() {
       });
 
       nextButtonContainer.appendChild(nextButton);
-      quizForm.appendChild(nextButtonContainer);
+      quizButtonContainer.appendChild(nextButtonContainer);
     } else {
       // Submit button logic
       const submitButtonContainer = document.createElement('section');
@@ -194,7 +215,7 @@ function initQuiz() {
       });
 
       submitButtonContainer.appendChild(submitButton);
-      quizForm.appendChild(submitButtonContainer);
+      quizButtonContainer.appendChild(submitButtonContainer);
     }
 
     // Previous button logic
@@ -227,7 +248,7 @@ function initQuiz() {
     }
 
     previousButtonContainer.appendChild(previousButton);
-    quizForm.appendChild(previousButtonContainer);
+    quizButtonContainer.appendChild(previousButtonContainer);
 
     // Exit button logic
     const exitButtonContainer = document.createElement('section');
@@ -260,12 +281,16 @@ function initQuiz() {
     });
 
     exitButtonContainer.appendChild(exitButton);
-    quizForm.appendChild(exitButtonContainer);
+    quizButtonContainer.appendChild(exitButtonContainer);
 
     return quizForm;
   }
 
   function displayResult() {
+    const quizButtonContainer = document.createElement('div');
+    quizButtonContainer.className = 'quiz-button-container';
+    
+    
     const resultContainer = document.createElement('div');
     resultContainer.className = 'result-container';
 
@@ -310,9 +335,10 @@ function initQuiz() {
       userAnswers = new Map();
       displayNextQuestion();
     });
-
+    resultContainer.appendChild(quizButtonContainer);
+    
     restartButtonContainer.appendChild(restartButton);
-    resultContainer.appendChild(restartButtonContainer);
+    quizButtonContainer.appendChild(restartButtonContainer);
 
     // Clear the quiz form container and display the result
     quizFormContainer.innerHTML = '';

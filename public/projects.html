@@ -9,12 +9,17 @@
   <link rel="stylesheet" href="/popa-muravya/style/header.css">
   <link rel="stylesheet" href="/popa-muravya/style/animation.css">
   <link rel="stylesheet" href="/popa-muravya/style/project.css">
+  <link rel="stylesheet" href="/popa-muravya/style/background.css">
+  <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+  <script defer src="/popa-muravya/javascript/particle.js"></script>
 </head>
 
 <body id="project" data-barba="wrapper">
   <custom-header></custom-header>
   <div class="loader"></div>
   <main data-barba="container">
+    <svg id="triangleCanvas" width="100%" height="100%"></svg>
     <div class="banner">
       <div class="slider" style="--quantity: 6">
         <div class="item" style="--position: 1">
@@ -45,7 +50,8 @@
           <a href="">
             <div class="img-container">
               <img src="/popa-muravya/assets/image/projects/ai.jpg" alt="Virtual Assistant" class="under-construction-project">
-              <img src="/popa-muravya/assets/image/projects/under-construction.png" alt="under construction" class="under-construction">
+              <img src="/popa-muravya/assets/image/projects/under-construction.png" alt="under construction"
+                class="under-construction">
             </div>
           </a>
           <div class="text">
@@ -55,15 +61,21 @@
         <div class="item" style="--position: 6">
           <a href="">
             <div class="img-container">
-              <img src="/popa-muravya/assets/image/projects/rusteck-landing-page.png" alt="RusTeck" class="under-construction-project">
-              <img src="/popa-muravya/assets/image/projects/under-construction.png" alt="under construction" class="under-construction">
+              <img src="/popa-muravya/assets/image/projects/rusteck-landing-page.png" alt="RusTeck"
+                class="under-construction-project">
+              <img src="/popa-muravya/assets/image/projects/under-construction.png" alt="under construction"
+                class="under-construction">
             </div>
           </a>
           <div class="text">
             <h2>RusTeck</h2>
           </div>
         </div>
+        <div  style="text-align: center"></div>
+          <canvas class="particle-sphere" id="canvasOne" width="400" height="520"></canvas>
+        </div>
       </div>
+      
     </div>
   </main>
 
@@ -73,6 +85,7 @@
   <script src="/popa-muravya/javascript/script.js" defer></script>
   <script src="/popa-muravya/javascript/porject-animation.js" defer></script>
   <script type="module" src="/popa-muravya/javascript/template.js"></script>
+  <script src="/popa-muravya/javascript/background.js" defer></script>
 </body>
 
 </html>

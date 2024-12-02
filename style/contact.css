@@ -1,13 +1,58 @@
-.contact-container{
+@font-face {
+  font-family: 'automata';
+  src: url('/popa-muravya/assets/font/automata/AUTOMATA-DISPLAY.woff2');
+  src: url('/popa-muravya/assets/font/automata/AUTOMATA-DISPLAY.woff');
+  src: url('/popa-muravya/assets/font/automata/AUTOMATA-DISPLAY.ttf');
+}
+
+.contact,
+.contact-container {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-content: center;
   align-items: center;
+  justify-content: flex-start;
 }
-.network-container{
+
+.contact-container {
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+  font-family: 'automata';
+  font-size: 1.5em;
+}
+
+.contact-me-container h1 {
+  margin-top: 0;
+}
+
+.contact-me-items input,
+#message {
+  background-color: #ff5700;
+  font-family: 'automata';
+  font-size: 1em;
+  color: #322e2d;
+}
+
+.contact-me-items,
+.my-info-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.my-info-container {
+  align-items: center;
+}
+
+.my-info-container h2 {
+  margin-top: 0;
+}
+
+.network-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center
 }
 
 .contact-button {
@@ -19,9 +64,10 @@
   text-transform: uppercase;
   cursor: pointer;
   text-align: center;
+  align-self: center;
 }
 
-.net-button{
+.net-button {
   text-decoration: none;
   font-size: 24px;
   font-weight: 600;
@@ -30,9 +76,14 @@
   color: #322e2d;
 }
 
+.contact-me-items,
+.network-item {
+  pointer-events: auto;
+}
+
 .button.v19 .label {
   padding: 1px 30px;
-  font-family: arial;
+  font-family: 'automata';
   font-size: 14px;
   display: inline-block;
   z-index: 10;
@@ -118,7 +169,7 @@
   bottom: 0;
 }
 
-.net-button:hover{
+.contact-button:hover .net-button {
   color: #d6d3ce;
 }
 
@@ -152,4 +203,35 @@
   background: transparent;
   transition-delay: 0s;
   opacity: 0;
+}
+
+#message {
+  height: 150px;
+}
+
+@media screen and (max-width: 1024px) {}
+
+@media screen and (max-width: 768px) {
+  .contact-container {
+    font-size: 1.3em;
+  }
+
+  .contact-me-items input,
+  #message {
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  #contact{
+    overflow: hidden;
+    height: 100%;
+  }
+  .contact{
+    overflow: auto;
+    height: 100vh;
+  }
+  .contact-container {
+    font-size: 1.2em;
+  }
 }

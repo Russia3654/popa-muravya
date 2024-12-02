@@ -1,9 +1,19 @@
+@font-face {
+  font-family: 'automata';
+  src: url('/popa-muravya/assets/font/automata/AUTOMATA-DISPLAY.woff2');
+  src: url('/popa-muravya/assets/font/automata/AUTOMATA-DISPLAY.woff');
+  src: url('/popa-muravya/assets/font/automata/AUTOMATA-DISPLAY.ttf');
+}
+
 .banner{
   width: 100%;
   height: 90vh;
   text-align: center;
   overflow: visible;
   position: relative;
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
 }
 .banner .slider{
   position: absolute;
@@ -14,12 +24,21 @@
   transform-style: preserve-3d;
   transform: perspective(1000px) rotateX(-10deg) rotateY(0deg);
 }
+.particle-sphere {
+
+  position: absolute; /* Keep it absolutely positioned */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  z-index: 10; /* Ensure it stays above other elements */
+}
+
 .banner .slider .item{
   position: absolute;
   inset: 0 0 0 0;
   transform: 
     rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
     translateZ(450px);
+    pointer-events: auto;
 }
 
 .banner .slider .item img{
@@ -38,16 +57,45 @@
   filter: none;
   transform: scale(1.1);
 }
+.hovered .project-image,
+.hovered .img-container{
+  filter: none;
+  transform: scale(1.1);
+}
 /* Under construction section */
 .under-construction{
   position: absolute;
   bottom: 0px;
   margin-left: -300px;
-  
 }
 .under-construction-project{
   filter: blur(10px);
 }
 .img-container{
   position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  
+}
+@media screen and (max-width: 425px) {
+  .banner .slider .item img{
+    width: 50vw;
+  }
+  .text{
+    font-size: 0.5em;
+  }
+  .under-construction{
+    margin-left: calc(-300px + 30%);
+  }
+}
+@media screen and (max-width: 375px) {
+  .under-construction{
+    margin-left: calc(-300px + 38%);
+  }
+}
+@media screen and (max-width: 320px) {
+  .under-construction{
+    margin-left: calc(-300px + 47%);
+  }
 }

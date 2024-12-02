@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'automata';
+  src: url('/popa-muravya/assets/font/automata/AUTOMATA-DISPLAY.woff2');
+  src: url('/popa-muravya/assets/font/automata/AUTOMATA-DISPLAY.woff');
+  src: url('/popa-muravya/assets/font/automata/AUTOMATA-DISPLAY.ttf');
+}
+
 /* div style */
 .cust-head {
   display: flex;
@@ -5,6 +12,7 @@
   height: 75px;
   background-color: #322e2d;
   justify-content: space-evenly;
+  font-family: 'automata';
 }
 
 .left-head {
@@ -23,6 +31,7 @@
 .navbar {
   display: flex;
   gap: 1rem;
+  height: 48px;
 }
 
 .navbar li {
@@ -40,7 +49,6 @@
   margin: 0px 10px;
   float: left;
   position: relative;
-  font-family: arial;
   text-transform: uppercase;
   cursor: pointer;
 }
@@ -190,6 +198,7 @@ input #checkbox {
   list-style: none;
   right: -190px;
   width: fit-content;
+  height: 1px;
   transform: scaleY(0);
   transform-origin: top;
   transition: transform 0.5s;
@@ -197,6 +206,7 @@ input #checkbox {
 
 .about-link:hover+.dropdown-about,
 .dropdown-about:hover {
+  height: fit-content;
   animation: dropdown-animation 1s forwards;
   animation-delay: 0.7s;
 }
@@ -218,7 +228,7 @@ input #checkbox {
 
 
 
-/* @media screen and (max-width: 1200px){
+@media screen and (max-width: 1200px){
   .navbar{
       position: absolute;
       top: 75px;
@@ -284,4 +294,4 @@ input #checkbox {
       transition-duration: .5s;
       transform: rotate(180deg);
   }
-} */
+}

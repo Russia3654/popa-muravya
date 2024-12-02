@@ -9,37 +9,42 @@
   <link rel="stylesheet" href="/popa-muravya/style/header.css">
   <link rel="stylesheet" href="/popa-muravya/style/animation.css">
   <link rel="stylesheet" href="/popa-muravya/style/quiz.css">
+  <link rel="stylesheet" href="/popa-muravya/style/background.css">
 </head>
 
 <body id="quiz" data-barba="wrapper">
   <custom-header></custom-header>
   <div class="loader"></div>
   <main data-barba="container" class="quiz-main">
-    <h1>QUIZ</h1>
-    <div class="quiz-container">
-      <div class="quiz-item" data-quiz-id="1">
-        <img class="val-logo" src="/popa-muravya/assets/image/quiz/valorant-logo.png" alt="valorant logo">
+    <svg id="triangleCanvas" width="100%" height="100%"></svg>
+    <div class="quiz-area">
+      <h1>QUIZ</h1>
+      <div class="quiz-container">
+        <div class="quiz-item" data-quiz-id="1">
+          <img class="val-logo" src="/popa-muravya/assets/image/quiz/valorant-logo.png" alt="valorant logo">
+        </div>
+        <div class="quiz-item" data-quiz-id="2">
+          <img class="war-logo" src="/popa-muravya/assets/image/quiz/war-thunder-logo.png" alt="war thunder logo">
+        </div>
+        <div class="quiz-item" data-quiz-id="3">
+          <img class="pc-logo" src="/popa-muravya/assets/image/quiz/pc-builder-logo.png" alt="pc building logo">
+        </div>
+        <div class="quiz-item" data-quiz-id="4">
+          <img class="lol-logo" src="/popa-muravya/assets/image/quiz/league-of-legends-logo.png" alt=" league of legend logo">
+        </div>
       </div>
-      <div class="quiz-item" data-quiz-id="2">
-        <img class="war-logo" src="/popa-muravya/assets/image/quiz/war-thunder-logo.png" alt="war thunder logo">
-      </div>
-      <div class="quiz-item" data-quiz-id="3">
-        <img class="pc-logo" src="/popa-muravya/assets/image/quiz/pc-builder-logo.png" alt="pc building logo">
-      </div>
-      <div class="quiz-item" data-quiz-id="4">
-        <img class="lol-logo" src="/popa-muravya/assets/image/quiz/league-of-legends-logo.png" alt=" league of legend logo">
-      </div>
+      <div class="quiz-form-container empty"></div>
     </div>
-
-    <div class="quiz-form-container empty"></div>
   </main>
 
 
   <script src="https://unpkg.com/@barba/core"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+  <script src="/popa-muravya/javascript/background.js" defer></script>
   <script src="/popa-muravya/javascript/script.js" defer></script>
   <script src="/popa-muravya/javascript/quiz.js" defer></script>
   <script type="module" src="/popa-muravya/javascript/template.js"></script>
+  
 </body>
 
 </html>

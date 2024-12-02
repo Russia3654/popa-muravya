@@ -1,103 +1,409 @@
 {
   "schedules": [
     {
+      "day":"Monday",
+      "start_time":"11:00",
+      "end_time":"13:45",
+      "subject_id": 2,
+      "semester_id": 1
+    },
+    {
+      "day":"Tuesday",
+      "start_time":"08:00",
+      "end_time":"09:15",
+      "subject_id": 1,
+      "semester_id": 1
+    },
+    {
+      "day":"Thursday",
+      "start_time":"08:00",
+      "end_time":"09:15",
+      "subject_id": 1,
+      "semester_id": 1
+    },
+    {
+      "day":"Friday",
+      "start_time":"11:00",
+      "end_time":"13:45",
+      "subject_id": 2,
+      "semester_id": 1
+    },
+
+    {
+      "day":"Monday",
+      "start_time":"09:30",
+      "end_time":"10:45",
+      "subject_id": 3,
+      "semester_id": 2
+    },
+    {
+      "day":"Monday",
+      "start_time":"15:30",
+      "end_time":"16:45",
+      "subject_id": 5,
+      "semester_id": 2
+    },
+    {
+      "day":"Tuesday",
+      "start_time":"08:30",
+      "end_time":"09:45",
+      "subject_id": 6,
+      "semester_id": 2
+    },
+    {
+      "day":"Tuesday",
+      "start_time":"12:20",
+      "end_time":"13:59",
+      "subject_id": 7,
+      "semester_id": 2
+    },
+    {
+      "day":"Tuesday",
+      "start_time":"15:30",
+      "end_time":"16:45",
+      "subject_id": 4,
+      "semester_id": 2
+    },
+    {
+      "day":"Thursday",
+      "start_time":"08:30",
+      "end_time":"09:45",
+      "subject_id": 6,
+      "semester_id": 2
+    },
+    {
+      "day":"Thursday",
+      "start_time":"15:30",
+      "end_time":"16:45",
+      "subject_id": 4,
+      "semester_id": 2
+    },
+    {
+      "day":"Friday",
+      "start_time":"09:30",
+      "end_time":"10:45",
+      "subject_id": 3,
+      "semester_id": 2
+    },
+    {
+      "day":"Friday",
+      "start_time":"11:00",
+      "end_time":"11:50",
+      "subject_id": 3,
+      "semester_id": 2
+    },
+    {
+      "day":"Friday",
+      "start_time":"15:30",
+      "end_time":"16:45",
+      "subject_id": 5,
+      "semester_id": 2
+    },
+
+    {
+      "day":"Monday",
+      "start_time":"08:00",
+      "end_time":"09:40",
+      "subject_id": 8,
+      "semester_id": 3
+    },
+    {
+      "day":"Monday",
+      "start_time":"12:30",
+      "end_time":"13:20",
+      "subject_id": 9,
+      "semester_id": 3
+    },
+    {
+      "day":"Monday",
+      "start_time":"15:30",
+      "end_time":"16:45",
+      "subject_id": 10,
+      "semester_id": 3
+    },
+    {
+      "day":"Tuesday",
+      "start_time":"09:20",
+      "end_time":"10:55",
+      "subject_id": 11,
+      "semester_id": 3
+    },
+    {
+      "day":"Tuesday",
+      "start_time":"11:00",
+      "end_time":"12:15",
+      "subject_id": 12,
+      "semester_id": 3
+    },
+    {
+      "day":"Thursday",
+      "start_time":"09:20",
+      "end_time":"10:55",
+      "subject_id": 11,
+      "semester_id": 3
+    },
+    {
+      "day":"Thursday",
+      "start_time":"11:00",
+      "end_time":"12:15",
+      "subject_id": 12,
+      "semester_id": 3
+    },
+    {
+      "day":"Thursday",
+      "start_time":"12:20",
+      "end_time":"13:59",
+      "subject_id": 13,
+      "semester_id": 3
+    },
+    {
+      "day":"Friday",
+      "start_time":"08:00",
+      "end_time":"9:40",
+      "subject_id": 8,
+      "semester_id": 3
+    },
+    {
+      "day":"Friday",
+      "start_time":"12:30",
+      "end_time":"13:20",
+      "subject_id": 9,
+      "semester_id": 3
+    },
+    {
+      "day":"Friday",
+      "start_time":"15:30",
+      "end_time":"16:45",
+      "subject_id": 10,
+      "semester_id": 3
+    },
+
+    {
       "day": "Monday",
       "start_time": "08:00",
       "end_time": "09:15",
-      "subject_id": 3,
+      "subject_id": 16,
       "semester_id": 4
     },
     {
       "day": "Monday",
       "start_time": "12:30",
       "end_time": "13:45",
-      "subject_id": 4,
+      "subject_id": 17,
       "semester_id": 4
     },
     {
       "day": "Tuesday",
       "start_time": "09:30",
       "end_time": "10:30",
-      "subject_id": 2,
+      "subject_id": 15,
       "semester_id": 4
     },
     {
       "day": "Tuesday",
       "start_time": "11:00",
       "end_time": "12:15",
-      "subject_id": 1,
+      "subject_id": 14,
       "semester_id": 4
     },
     {
       "day": "Thursday",
       "start_time": "09:30",
       "end_time": "10:30",
-      "subject_id": 2,
+      "subject_id": 15,
       "semester_id": 4
     },
     {
       "day": "Thursday",
       "start_time": "11:00",
       "end_time": "12:15",
-      "subject_id": 1,
+      "subject_id": 14,
       "semester_id": 4
     },
     {
       "day": "Friday",
       "start_time": "08:00",
       "end_time": "09:15",
-      "subject_id": 3,
+      "subject_id": 16,
       "semester_id": 4
     },
     {
       "day": "Friday",
       "start_time": "12:30",
       "end_time": "13:45",
-      "subject_id": 4,
+      "subject_id": 17,
       "semester_id": 4
     }
   ],
   "subjects": [
     {
       "id": 1,
-      "code": "CSC211",
-      "name": "Discrete Method",
-      "teacher_id": 2
+      "code": "MAT110",
+      "name": "Pre-calculus",
+      "teacher_id": 1 
     },
     {
       "id": 2,
-      "code": "CSC360",
-      "name": "Internet Technology",
-      "teacher_id": 4
+      "code": "ENG140",
+      "name": "Remedial English",
+      "teacher_id": 2
     },
     {
       "id": 3,
-      "code": "CSC420",
-      "name": "Computer Network",
-      "teacher_id": 1
+      "code": "MAT213",
+      "name": "Single Variable Calculus",
+      "teacher_id": 3
     },
     {
       "id": 4,
+      "code": "CSC212",
+      "name": "Compu. Organ. & Assembly Language",
+      "teacher_id": 4
+    },
+    {
+      "id": 5,
+      "code": "ENG240",
+      "name": "English Communi",
+      "teacher_id": 5
+    },
+    {
+      "id": 6,
+      "code": "CSC214",
+      "name": "Programming 1",
+      "teacher_id": 6
+    },
+    {
+      "id": 7,
+      "code": "CSC270",
+      "name": "Programming Laboratory 1",
+      "teacher_id": 7
+    },
+    {
+      "id": 8,
+      "code": "CSC314",
+      "name": "Object oriented programming",
+      "teacher_id": 8
+    },
+    {
+      "id": 9,
+      "code": "CSC271",
+      "name": "GUI programming",
+      "teacher_id": 9
+    },
+    {
+      "id": 10,
+      "code": "CSC211",
+      "name": "Discrete Method",
+      "teacher_id": 10
+    },
+    {
+      "id": 11,
+      "code": "CSC320",
+      "name": "Database Management systems",
+      "teacher_id": 11
+    },
+    {
+      "id": 12,
+      "code": "CSC215",
+      "name": "Programming 2",
+      "teacher_id": 12
+    },
+    {
+      "id": 13,
+      "code": "CSC272",
+      "name": "Programming Laboratory 2",
+      "teacher_id": 12
+    },
+
+    {
+      "id": 14,
+      "code": "CSC211",
+      "name": "Discrete Method",
+      "teacher_id": 14
+    },
+    {
+      "id": 15,
+      "code": "CSC360",
+      "name": "Internet Technology",
+      "teacher_id": 16
+    },
+    {
+      "id": 16,
+      "code": "CSC420",
+      "name": "Computer Network",
+      "teacher_id": 13
+    },
+    {
+      "id": 17,
       "code": "CHM212",
       "name": "General Chemistry",
-      "teacher_id": 3
+      "teacher_id": 15
     }
   ],
   "teachers": [
     {
       "id": 1,
-      "name": "Dr. Jacques Demerjian"
+      "name": "Mrs. Eliana Taan Nassar"
     },
     {
       "id": 2,
-      "name": "Dr Joseph Georges Wassaf"
+      "name": "Mme Mireille Kamal Redford"
     },
     {
       "id": 3,
-      "name": "Ms. Rita Tony Sassine"
+      "name": "Dr. Hyam Gerges Abboud"
     },
     {
       "id": 4,
+      "name": "M Fadi Hanna Kamar"
+    },
+    {
+      "id": 5,
+      "name": "M Najib Eid Al Najjar"
+    },
+    {
+      "id": 6,
+      "name": "Ing. Issam Gergy Moussallem"
+    },
+    {
+      "id": 7,
+      "name": "Dr. Bassam Issam Eter"
+    },
+    {
+      "id": 8,
+      "name": "Dr, Carine Kassis"
+    },
+    {
+      "id": 9,
+      "name": "M. Salem Khalifeh"
+    },
+    {
+      "id": 10,
+      "name": "Ing. Ibrahim Ismail Ismail"
+    },
+    {
+      "id": 11,
+      "name": "Mr. Maroun Elias Abi Assaf"
+    },
+    {
+      "id": 12,
+      "name": "Ms. Lise Emile Safatly Demirdjian"
+    },
+
+    {
+      "id": 13,
+      "name": "Dr. Jacques Demerjian"
+    },
+    {
+      "id": 14,
+      "name": "Dr Joseph Georges Wassaf"
+    },
+    {
+      "id": 15,
+      "name": "Ms. Rita Tony Sassine"
+    },
+    {
+      "id": 16,
       "name": "Ziad Charbel Eid"
     }
   ],

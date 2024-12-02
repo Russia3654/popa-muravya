@@ -9,15 +9,29 @@
 	<link rel="stylesheet" href="/popa-muravya/style/header.css">
 	<link rel="stylesheet" href="/popa-muravya/style/animation.css">
 	<link rel="stylesheet" href="/popa-muravya/style/schedule.css">
+	<link rel="stylesheet" href="/popa-muravya/style/background.css">
 </head>
 
 <body id="schedule" data-barba="wrapper">
 	<custom-header></custom-header>
 	<div class="loader"></div>
-	<main data-barba="container">
-		<div class="schedule-table" id="scheduleTable">
-
+	<main data-barba="container" class="schedule-page">
+		<svg id="triangleCanvas" width="100%" height="100%"></svg>
+		<div class="schedule-container">
+			<h1 class="schedule-title">Schedule</h1>
+			<div class="semester-dropdown">
+				<label for="semesterSelect">Select Semester:</label>
+				<select id="semesterSelect">
+						<option value="1">Fall 2022-2023</option>
+						<option value="2">Spring 2022-2023</option>
+						<option value="3">Spring 2023-2024</option>
+						<option value="4">Fall 2024-2025</option>
+				</select>
+				<button id="showScheduleButton">Submit</button>
 		</div>
+			<div class="schedule-table" id="scheduleTable"></div>
+		</div>
+		<div id="scheduleInfo"></div>
 	</main>
 
 
@@ -26,6 +40,7 @@
 	<script src="/popa-muravya/javascript/script.js" defer></script>
 	<script type="module" src="/popa-muravya/javascript/template.js"></script>
 	<script src="/popa-muravya/javascript/schedule.js"></script>
+	<script src="/popa-muravya/javascript/background.js" defer></script>
 </body>
 
 </html>

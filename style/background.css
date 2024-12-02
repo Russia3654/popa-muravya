@@ -1,0 +1,11 @@
+.triangle {
+  stroke: gray; /* Border color */
+  stroke-width: 0.1;
+  pointer-events: auto;
+}
+.triangle.hovered {
+  fill: rgba(255, 69, 0, 0.7); /* Change color on hover */
+}
+.triangle.surrounding {
+  fill: rgba(255, 69, 0, 0.3); /* Color for surrounding triangles */
+}

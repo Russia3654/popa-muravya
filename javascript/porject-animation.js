@@ -13,8 +13,36 @@ function initProjectAnimation() {
 
   function updateSliderRotation() {
     const slider = document.querySelector('.slider');
+    const particleSphere = document.querySelector('.particle-sphere');
+    const items = slider.querySelectorAll('.item'); // Get all items in the slider
+    const numberOfItems = items.length; // Total number of items
+
     if (slider) {
       slider.style.transform = `perspective(1000px) rotateX(-10deg) rotateY(${sliderRotation}deg)`;
+    }
+    particleSphere.style.transform = `translate(-50%, -50%) rotateY(${-sliderRotation}deg)`;
+
+    // Check if the screen width is smaller than or equal to 768px
+    // Check if the screen width is smaller than or equal to 768px
+    if (window.innerWidth <= 768) {
+      // Remove hover class from all items
+      items.forEach(item => {
+        item.classList.remove('hovered'); // Remove hover class from all items
+      });
+
+      // Calculate the current index based on the slider rotation
+      const indexPerStop = 360 / numberOfItems; // Calculate the angle per item
+    const normalizedRotation = (360 - (sliderRotation + indexPerStop / 2)) % 360; // Reverse the rotation
+    const currentIndex = Math.floor(normalizedRotation / indexPerStop) + 1; // Calculate the current index
+
+      // Ensure the currentIndex is within bounds
+      if (currentIndex >= 0 && currentIndex < numberOfItems) {
+        // Simulate hover effect on the current item
+        const currentItem = items[currentIndex];
+        if (currentItem) {
+          currentItem.classList.add('hovered'); // Add hover class
+        }
+      }
     }
   }
 
@@ -50,27 +78,27 @@ function initProjectAnimation() {
     const currentTime = new Date().getTime();
     const timeDiff = currentTime - lastScrollTime;
     lastScrollTime = currentTime;
-  
+
     const scrollDelta = event.deltaY;
     scrollDirection = scrollDelta > 0 ? 1 : -1;
-  
+
     // Adjust sliderRotation based on scroll direction
     sliderRotation += scrollDirection * 10;
-  
+
     // Implement wraparound behavior
     if (sliderRotation < 0) {
       sliderRotation = 360;
     } else if (sliderRotation > 360) {
       sliderRotation = 0;
     }
-  
+
     sliderRotation = Math.round(sliderRotation);
-  
+
     // update autoRotation value
     autoRotation = sliderRotation;
-  
+
     updateSliderRotation();
-  
+
     // reset flag after a short delay to allow for smooth scrolling
     setTimeout(() => {
       isScrolling = false;
